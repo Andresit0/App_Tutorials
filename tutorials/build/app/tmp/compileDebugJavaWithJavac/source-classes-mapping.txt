@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/example/temp_btn_color_dialog_font/BuildConfig.java
- com.example.temp_btn_color_dialog_font.BuildConfig

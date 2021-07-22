@@ -1,4 +1,0 @@
-#Thu Jul 22 10:52:41 ECT 2021
-base.0=/Users/andresito/Desktop/tutorials/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
