@@ -169,9 +169,9 @@ class FlutterUIPageState extends State<FlutterUI> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Container(
-                                  child: speak.learn(size(), context)),
-                            ),
+                                builder: (context) => Container(
+                                      child: speak.Speak(),
+                                    )),
                           );
                         }),
                       ),

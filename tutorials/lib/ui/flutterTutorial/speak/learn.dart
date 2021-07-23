@@ -1,320 +1,179 @@
-String minSdkValue = '''
-minSdkVersion 21
-''';
-
-String pubspecYaml = '''
-dependencies:
-  flutter:
-    sdk: flutter
-  flutter_tts: ^3.2.1
-''';
-
-String speakValue = '''
-import 'dart:async';
-import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
+import 'package:flutter/services.dart';
+import '/ui/global/font.dart' as globalFont;
+import '/ui/global/btn.dart' as globalBtn;
+import '/ui/global/func.dart' as globalFunc;
+import '/ui/global/speak.dart' as globalSpeak;
+import '/ui/img/icon/icon_downloaded.dart' as iconDownloaded;
+import 'code.dart' as code;
 
-enum TtsState { playing, stopped, paused, continued }
-
-late FlutterTts flutterTts;
-String? language;
-String? engine;
-double volume = 0.5;
-double pitch = 1.0;
-double rate = 0.5;
-bool isCurrentLanguageInstalled = false;
-
-String? _newVoiceText;
-int? _inputLength;
-
-TtsState ttsState = TtsState.stopped;
-
-get isPlaying => ttsState == TtsState.playing;
-get isStopped => ttsState == TtsState.stopped;
-get isPaused => ttsState == TtsState.paused;
-get isContinued => ttsState == TtsState.continued;
-
-bool get isIOS => !kIsWeb && Platform.isIOS;
-bool get isAndroid => !kIsWeb && Platform.isAndroid;
-bool get isWeb => kIsWeb;
-
-initTts() {
-  flutterTts = FlutterTts();
-
-  if (isAndroid) {
-    _getDefaultEngine();
-  }
-
-  flutterTts.setStartHandler(() {
-    print("Playing");
-    ttsState = TtsState.playing;
-  });
-
-  flutterTts.setCompletionHandler(() {
-    print("Complete");
-    ttsState = TtsState.stopped;
-  });
-
-  flutterTts.setCancelHandler(() {
-    print("Cancel");
-    ttsState = TtsState.stopped;
-  });
-
-  if (isWeb || isIOS) {
-    flutterTts.setPauseHandler(() {
-      print("Paused");
-      ttsState = TtsState.paused;
-    });
-
-    flutterTts.setContinueHandler(() {
-      print("Continued");
-      ttsState = TtsState.continued;
-    });
-  }
-
-  flutterTts.setErrorHandler((msg) {
-    print("error: \$msg");
-    ttsState = TtsState.stopped;
-  });
-}
-
-Future<dynamic> _getLanguages() => flutterTts.getLanguages;
-
-Future<dynamic> _getEngines() => flutterTts.getEngines;
-
-Future _getDefaultEngine() async {
-  var engine = await flutterTts.getDefaultEngine;
-  if (engine != null) {
-    print(engine);
-  }
-}
-
-Future _speak() async {
-  await flutterTts.setVolume(volume);
-  await flutterTts.setSpeechRate(rate);
-  await flutterTts.setPitch(pitch);
-
-  if (_newVoiceText != null) {
-    if (_newVoiceText!.isNotEmpty) {
-      await flutterTts.awaitSpeakCompletion(true);
-      await flutterTts.speak(_newVoiceText!);
-    }
-  }
-}
-
-Future _stop() async {
-  var result = await flutterTts.stop();
-  if (result == 1) ttsState = TtsState.stopped;
-}
-
-Future _pause() async {
-  var result = await flutterTts.pause();
-  if (result == 1) ttsState = TtsState.paused;
-}
-
-List<DropdownMenuItem<String>> getEnginesDropDownMenuItems(dynamic engines) {
-  var items = <DropdownMenuItem<String>>[];
-  for (dynamic type in engines) {
-    items.add(
-        DropdownMenuItem(value: type as String?, child: Text(type as String)));
-  }
-  return items;
-}
-
-void changedEnginesDropDownItem(String? selectedEngine) {
-  flutterTts.setEngine(selectedEngine!);
-  language = null;
-  engine = selectedEngine;
-}
-
-List<DropdownMenuItem<String>> getLanguageDropDownMenuItems(dynamic languages) {
-  var items = <DropdownMenuItem<String>>[];
-  for (dynamic type in languages) {
-    items.add(
-        DropdownMenuItem(value: type as String?, child: Text(type as String)));
-  }
-  return items;
-}
-
-void changedLanguageDropDownItem(String? selectedType) {
-  language = selectedType;
-  flutterTts.setLanguage(language!);
-  if (isAndroid) {
-    flutterTts
-        .isLanguageInstalled(language!)
-        .then((value) => isCurrentLanguageInstalled = (value as bool));
-  }
-}
-
-void _onChange(String text) {
-  _newVoiceText = text;
-}
-
-Widget _engineSection() {
-  if (isAndroid) {
-    return FutureBuilder<dynamic>(
-        future: _getEngines(),
-        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-          if (snapshot.hasData) {
-            return _enginesDropDownSection(snapshot.data);
-          } else if (snapshot.hasError) {
-            return Text('Error loading engines...');
-          } else
-            return Text('Loading engines...');
-        });
-  } else
-    return Container(width: 0, height: 0);
-}
-
-Widget _futureBuilder() => FutureBuilder<dynamic>(
-    future: _getLanguages(),
-    builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-      if (snapshot.hasData) {
-        return _languageDropDownSection(snapshot.data);
-      } else if (snapshot.hasError) {
-        return Text('Error loading languages...');
-      } else
-        return Text('Loading Languages...');
-    });
-
-Widget _inputSection() => Container(
-      alignment: Alignment.topCenter,
-      padding: EdgeInsets.all(0),
-      child: TextField(
-        onChanged: (String value) {
-          _onChange(value);
-        },
-      ),
-    );
-
-Widget _btnSection() {
-  if (isAndroid) {
-    return Container(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      _buildButtonColumn(
-          Colors.green, Colors.greenAccent, Icons.play_arrow, _speak),
-      _buildButtonColumn(Colors.red, Colors.redAccent, Icons.stop, _stop),
-    ]));
-  } else {
-    return Container(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      _buildButtonColumn(
-          Colors.green, Colors.greenAccent, Icons.play_arrow, _speak),
-      _buildButtonColumn(Colors.red, Colors.redAccent, Icons.stop, _stop),
-      _buildButtonColumn(Colors.blue, Colors.blueAccent, Icons.pause, _pause),
-    ]));
-  }
-}
-
-Widget _enginesDropDownSection(dynamic engines) => Container(
-      child: DropdownButton(
-        value: engine,
-        items: getEnginesDropDownMenuItems(engines),
-        onChanged: changedEnginesDropDownItem,
-      ),
-    );
-
-Widget _languageDropDownSection(dynamic languages) => Container(
-    padding: EdgeInsets.only(top: 10.0),
-    child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      DropdownButton(
-        value: language,
-        items: getLanguageDropDownMenuItems(languages),
-        onChanged: changedLanguageDropDownItem,
-      ),
-      Visibility(
-        visible: isAndroid,
-        child: Text("Is installed: \$isCurrentLanguageInstalled"),
-      ),
-    ]));
-
-Column _buildButtonColumn(
-    Color color, Color splashColor, IconData icon, Function func) {
-  return Column(children: [
-    IconButton(
-        icon: Icon(
-          icon,
-          size: 45,
-        ),
-        color: color,
-        splashColor: splashColor,
-        onPressed: () => func()),
-  ]);
-}
-
-Widget _getMaxSpeechInputLengthSection() {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: [
-      ElevatedButton(
-        child: Text('Get max speech input length'),
-        onPressed: () async {
-          _inputLength = await flutterTts.getMaxSpeechInputLength;
-        },
-      ),
-      Text("\$_inputLength characters"),
-    ],
+Widget learn(double size, BuildContext context) {
+  return Expanded(
+    child: SingleChildScrollView(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.topRight,
+              child: globalBtn.btnIconCircle(
+                  size * 15,
+                  size * 10,
+                  false,
+                  Colors.black,
+                  iconDownloaded.IconDownloaded.github_circled,
+                  context, () {
+                globalFunc
+                    .openAWeb("https://github.com/Andresit0/Speak_Flutter");
+              }),
+            ),
+            Container(
+              alignment: Alignment.topCenter,
+              child: globalFont.titleBlock('Speak',
+                  Theme.of(context).primaryColor, size * 8, TextAlign.center),
+            ),
+            Container(
+              width: size * 150,
+              child: globalSpeak.speak(),
+            ),
+            Container(
+              alignment: Alignment.topLeft,
+              child: globalFont.titleBlock('initState() and dispose()',
+                  Theme.of(context).primaryColor, size * 6, TextAlign.start),
+            ),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            Container(
+              alignment: Alignment.topLeft,
+              child: globalFont.paragraphBlock(
+                  'Over \"@override Widget build(BuildContext context)\" insert the next code',
+                  Colors.black,
+                  size * 4,
+                  TextAlign.start),
+            ),
+            Container(
+              alignment: Alignment.topRight,
+              padding: EdgeInsets.all(10),
+              child: Container(
+                child: globalBtn.btnIconCircle(
+                    size * 12,
+                    size * 7,
+                    false,
+                    Colors.black,
+                    Icons.copy_all,
+                    context,
+                    () =>
+                        Clipboard.setData(ClipboardData(text: code.initState))),
+              ),
+            ),
+            Container(
+              child: SelectableText(
+                code.initState,
+                style: TextStyle(fontSize: size * 4),
+              ),
+            ),
+            Container(
+              alignment: Alignment.topLeft,
+              child: globalFont.titleBlock('/android/app/build.gradle',
+                  Theme.of(context).primaryColor, size * 6, TextAlign.start),
+            ),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            Container(
+              alignment: Alignment.topLeft,
+              child: globalFont.paragraphBlock(
+                  'Change the minimum sdk version to 21',
+                  Colors.black,
+                  size * 4,
+                  TextAlign.start),
+            ),
+            Container(
+              alignment: Alignment.topRight,
+              padding: EdgeInsets.all(10),
+              child: Container(
+                child: globalBtn.btnIconCircle(
+                    size * 12,
+                    size * 7,
+                    false,
+                    Colors.black,
+                    Icons.copy_all,
+                    context,
+                    () => Clipboard.setData(
+                        ClipboardData(text: code.minSdkValue))),
+              ),
+            ),
+            Container(
+              child: SelectableText(
+                code.minSdkValue,
+                style: TextStyle(fontSize: size * 4),
+              ),
+            ),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            Container(
+              alignment: Alignment.topLeft,
+              child: globalFont.titleBlock('pubspec.yaml',
+                  Theme.of(context).primaryColor, size * 6, TextAlign.start),
+            ),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            Container(
+              alignment: Alignment.topLeft,
+              child: globalFont.paragraphBlock('Insert a dependencie',
+                  Colors.black, size * 4, TextAlign.start),
+            ),
+            Container(
+              alignment: Alignment.topRight,
+              padding: EdgeInsets.all(10),
+              child: Container(
+                child: globalBtn.btnIconCircle(
+                    size * 12,
+                    size * 7,
+                    false,
+                    Colors.black,
+                    Icons.copy_all,
+                    context,
+                    () => Clipboard.setData(
+                        ClipboardData(text: code.pubspecYaml))),
+              ),
+            ),
+            Container(
+              child: SelectableText(
+                code.pubspecYaml,
+                style: TextStyle(fontSize: size * 4),
+              ),
+            ),
+            Container(
+              alignment: Alignment.topLeft,
+              child: globalFont.titleBlock('speak.dart',
+                  Theme.of(context).primaryColor, size * 6, TextAlign.start),
+            ),
+            Container(
+              alignment: Alignment.topLeft,
+              child: globalFont.paragraphBlock(
+                  'Main code used to speak through the app',
+                  Colors.black,
+                  size * 4,
+                  TextAlign.start),
+            ),
+            Container(
+              alignment: Alignment.topRight,
+              padding: EdgeInsets.all(10),
+              child: Container(
+                child: globalBtn.btnIconCircle(
+                    size * 12,
+                    size * 7,
+                    false,
+                    Colors.black,
+                    Icons.copy_all,
+                    context,
+                    () => Clipboard.setData(
+                        ClipboardData(text: code.speakValue))),
+              ),
+            ),
+            Container(
+              child: SelectableText(
+                code.speakValue,
+                style: TextStyle(fontSize: size * 4),
+              ),
+            ),
+            Padding(padding: EdgeInsets.only(top: 40)),
+          ],
+        )),
   );
 }
-
-Widget _buildSliders() {
-  return Column(
-    children: [_volume(), _pitch(), _rate()],
-  );
-}
-
-Widget _volume() {
-  return Slider(
-      value: volume,
-      onChanged: (newVolume) {
-        volume = newVolume;
-      },
-      min: 0.0,
-      max: 1.0,
-      divisions: 10,
-      label: "Volume: \$volume");
-}
-
-Widget _pitch() {
-  return Slider(
-    value: pitch,
-    onChanged: (newPitch) {
-      pitch = newPitch;
-    },
-    min: 0.5,
-    max: 2.0,
-    divisions: 15,
-    label: "Pitch: \$pitch",
-    activeColor: Colors.red,
-  );
-}
-
-Widget _rate() {
-  return Slider(
-    value: rate,
-    onChanged: (newRate) {
-      rate = newRate;
-    },
-    min: 0.0,
-    max: 1.0,
-    divisions: 10,
-    label: "Rate: \$rate",
-    activeColor: Colors.green,
-  );
-}
-
-Widget speak() {
-  return Column(
-    children: [
-      _inputSection(),
-      _btnSection(),
-      _engineSection(),
-      _futureBuilder(),
-      _buildSliders(),
-      if (isAndroid) _getMaxSpeechInputLengthSection(),
-    ],
-  );
-}
-''';
