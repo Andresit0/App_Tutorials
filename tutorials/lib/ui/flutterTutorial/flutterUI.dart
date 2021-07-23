@@ -7,6 +7,7 @@ import 'button/button.dart' as button;
 import 'dialog/dialog.dart' as dialog;
 import 'font/font.dart' as font;
 import 'color/color.dart' as color;
+import 'speak/speak.dart' as speak;
 
 class FlutterUI extends StatefulWidget {
   FlutterUI({Key? key}) : super(key: key);
@@ -149,6 +150,27 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                               builder: (context) =>
                                   Container(child: color.Colors()),
+                            ),
+                          );
+                        }),
+                      ),
+                      Padding(padding: EdgeInsets.only(left: 10)),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial('Speak', Colors.black,
+                                size() * 3.5, TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Container(
+                                  child: speak.learn(size(), context)),
                             ),
                           );
                         }),
