@@ -8,6 +8,7 @@ import 'dialog/dialog.dart' as dialog;
 import 'font/font.dart' as font;
 import 'color/color.dart' as color;
 import 'speak/speak.dart' as speak;
+import 'form/form.dart' as form;
 
 class FlutterUI extends StatefulWidget {
   FlutterUI({Key? key}) : super(key: key);
@@ -101,6 +102,27 @@ class FlutterUIPageState extends State<FlutterUI> {
                             15,
                             1,
                             colorPrimary,
+                            globalFont.titleIconTutorial('Color', Colors.black,
+                                size() * 3.5, TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  Container(child: color.Colors()),
+                            ),
+                          );
+                        }),
+                      ),
+                      Padding(padding: EdgeInsets.only(left: 10)),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
                             globalFont.titleIconTutorial('Dialog', Colors.black,
                                 size() * 3.5, TextAlign.center), () {
                           Navigator.push(
@@ -122,14 +144,14 @@ class FlutterUIPageState extends State<FlutterUI> {
                             15,
                             1,
                             colorPrimary,
-                            globalFont.titleIconTutorial('Font', Colors.black,
+                            globalFont.titleIconTutorial('Form', Colors.black,
                                 size() * 3.5, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  Container(child: font.Font()),
-                            ),
+                                builder: (context) => Container(
+                                      child: form.Form(),
+                                    )),
                           );
                         }),
                       ),
@@ -143,13 +165,13 @@ class FlutterUIPageState extends State<FlutterUI> {
                             15,
                             1,
                             colorPrimary,
-                            globalFont.titleIconTutorial('Color', Colors.black,
+                            globalFont.titleIconTutorial('Font', Colors.black,
                                 size() * 3.5, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  Container(child: color.Colors()),
+                                  Container(child: font.Font()),
                             ),
                           );
                         }),

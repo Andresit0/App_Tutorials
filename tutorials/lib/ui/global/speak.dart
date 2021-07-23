@@ -171,6 +171,7 @@ Widget _inputSection() => Container(
       alignment: Alignment.topCenter,
       padding: EdgeInsets.all(0),
       child: TextField(
+        decoration: InputDecoration(hintText: 'Write Text to Read'),
         onChanged: (String value) {
           _onChange(value);
         },
