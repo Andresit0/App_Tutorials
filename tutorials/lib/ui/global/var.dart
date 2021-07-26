@@ -8,3 +8,4 @@ String imgFlutterDiag = 'lib/ui/img/tutorial/flutter/diagExample.png';
 String imgFlutterFont = 'lib/ui/img/tutorial/flutter/fontExample.png';
 String imgFlutterColor = 'lib/ui/img/tutorial/flutter/colorExample.png';
 String imgFlutterForm = 'lib/ui/img/tutorial/flutter/formExample.png';
+String imgFlutterWriteRead = 'lib/ui/img/tutorial/flutter/writeReadExample.png';

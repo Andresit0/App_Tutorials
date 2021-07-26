@@ -9,6 +9,7 @@ import 'font/font.dart' as font;
 import 'color/color.dart' as color;
 import 'speak/speak.dart' as speak;
 import 'form/form.dart' as form;
+import 'writeRead/writeRead.dart' as writeRead;
 
 class FlutterUI extends StatefulWidget {
   FlutterUI({Key? key}) : super(key: key);
@@ -63,11 +64,13 @@ class FlutterUIPageState extends State<FlutterUI> {
                   alignment: Alignment.topLeft,
                   width: double.infinity,
                   child: globalFont.strDeveloperBody('Templates', false,
-                      Colors.black, size() * 4, TextAlign.center),
+                      Colors.black, size() * 6, TextAlign.center),
                 ),
                 Padding(padding: EdgeInsets.only(top: 10)),
                 Container(
                   child: Wrap(
+                    spacing: 20,
+                    runSpacing: 20,
                     children: [
                       Container(
                         width: 70,
@@ -92,7 +95,6 @@ class FlutterUIPageState extends State<FlutterUI> {
                           );
                         }),
                       ),
-                      Padding(padding: EdgeInsets.only(left: 10)),
                       Container(
                         width: 70,
                         height: 70,
@@ -113,7 +115,6 @@ class FlutterUIPageState extends State<FlutterUI> {
                           );
                         }),
                       ),
-                      Padding(padding: EdgeInsets.only(left: 10)),
                       Container(
                         width: 70,
                         height: 70,
@@ -134,7 +135,6 @@ class FlutterUIPageState extends State<FlutterUI> {
                           );
                         }),
                       ),
-                      Padding(padding: EdgeInsets.only(left: 10)),
                       Container(
                         width: 70,
                         height: 70,
@@ -155,7 +155,6 @@ class FlutterUIPageState extends State<FlutterUI> {
                           );
                         }),
                       ),
-                      Padding(padding: EdgeInsets.only(left: 10)),
                       Container(
                         width: 70,
                         height: 70,
@@ -176,7 +175,6 @@ class FlutterUIPageState extends State<FlutterUI> {
                           );
                         }),
                       ),
-                      Padding(padding: EdgeInsets.only(left: 10)),
                       Container(
                         width: 70,
                         height: 70,
@@ -193,6 +191,29 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                                 builder: (context) => Container(
                                       child: speak.Speak(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
+                                'Write \n Read',
+                                Colors.black,
+                                size() * 3.5,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child: writeRead.WriteRead(),
                                     )),
                           );
                         }),
