@@ -66,8 +66,9 @@ class FlutterUIPageState extends State<FlutterUI> {
                   child: globalFont.strDeveloperBody('Templates', false,
                       Colors.black, size() * 6, TextAlign.center),
                 ),
-                Padding(padding: EdgeInsets.only(top: 10)),
+                Padding(padding: EdgeInsets.only(top: 15)),
                 Container(
+                  alignment: Alignment.center,
                   child: Wrap(
                     spacing: 20,
                     runSpacing: 20,
@@ -144,14 +145,14 @@ class FlutterUIPageState extends State<FlutterUI> {
                             15,
                             1,
                             colorPrimary,
-                            globalFont.titleIconTutorial('Form', Colors.black,
+                            globalFont.titleIconTutorial('Font', Colors.black,
                                 size() * 3.5, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Container(
-                                      child: form.Form(),
-                                    )),
+                              builder: (context) =>
+                                  Container(child: font.Font()),
+                            ),
                           );
                         }),
                       ),
@@ -164,14 +165,14 @@ class FlutterUIPageState extends State<FlutterUI> {
                             15,
                             1,
                             colorPrimary,
-                            globalFont.titleIconTutorial('Font', Colors.black,
+                            globalFont.titleIconTutorial('Form', Colors.black,
                                 size() * 3.5, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  Container(child: font.Font()),
-                            ),
+                                builder: (context) => Container(
+                                      child: form.Form(),
+                                    )),
                           );
                         }),
                       ),

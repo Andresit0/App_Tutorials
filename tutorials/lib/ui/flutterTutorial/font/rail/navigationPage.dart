@@ -55,7 +55,6 @@ Widget page0(double size, BuildContext context) {
                   ),
                   Padding(padding: EdgeInsets.only(top: 10)),
                   Container(
-                    height: 40,
                     child: TextFormField(
                       textAlign: TextAlign.center,
                       controller: controllerSearchProduct,
