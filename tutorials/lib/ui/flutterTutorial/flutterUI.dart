@@ -9,6 +9,7 @@ import 'font/font.dart' as font;
 import 'color/color.dart' as color;
 import 'speak/speak.dart' as speak;
 import 'form/form.dart' as form;
+import 'reorderable/reorderable.dart' as reorderable;
 import 'writeRead/writeRead.dart' as writeRead;
 import 'slidable/slidable.dart' as slidable;
 
@@ -173,6 +174,29 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                                 builder: (context) => Container(
                                       child: form.Form(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
+                                'Reorder',
+                                Colors.black,
+                                size() * 3.5,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child: reorderable.Reorderable(),
                                     )),
                           );
                         }),
