@@ -13,6 +13,7 @@ import 'reorderable/reorderable.dart' as reorderable;
 import 'writeRead/writeRead.dart' as writeRead;
 import 'slidable/slidable.dart' as slidable;
 import 'pageView/pageView.dart' as pageView;
+import 'encrypt/encrypt.dart' as encrypt;
 
 class FlutterUI extends StatefulWidget {
   FlutterUI({Key? key}) : super(key: key);
@@ -135,6 +136,29 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                               builder: (context) =>
                                   Container(child: dialog.Dialog()),
+                            ),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
+                                'Encrypt',
+                                Colors.black,
+                                size() * 3.5,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  Container(child: encrypt.Encrypt()),
                             ),
                           );
                         }),
