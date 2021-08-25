@@ -14,6 +14,8 @@ import 'writeRead/writeRead.dart' as writeRead;
 import 'slidable/slidable.dart' as slidable;
 import 'pageView/pageView.dart' as pageView;
 import 'encrypt/encrypt.dart' as encrypt;
+import 'notification/notification.dart' as notification;
+import 'publishApp/publishApp.dart' as publishApp;
 
 class FlutterUI extends StatefulWidget {
   FlutterUI({Key? key}) : super(key: key);
@@ -213,6 +215,29 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial(
+                                'Notification',
+                                Colors.black,
+                                size() * 3.5,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child: notification.Notification(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
                                 'Reorder',
                                 Colors.black,
                                 size() * 3.5,
@@ -245,6 +270,29 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                                 builder: (context) => Container(
                                       child: pageView.PageView(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
+                                'Publish \n App',
+                                Colors.black,
+                                size() * 3.5,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child: publishApp.PublishApp(),
                                     )),
                           );
                         }),
