@@ -5,5 +5,5 @@
     
 ## Flutter App
 
-This app was created to show tutorials created in this GitHub
+This app was created to show tutorials and templates created in this GitHub. Furthermore, another important information could be found in this APP.
 
