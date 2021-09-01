@@ -16,6 +16,7 @@ import 'pageView/pageView.dart' as pageView;
 import 'encrypt/encrypt.dart' as encrypt;
 import 'notification/notification.dart' as notification;
 import 'publishApp/publishApp.dart' as publishApp;
+import 'latex/latex.dart' as latex;
 
 class FlutterUI extends StatefulWidget {
   FlutterUI({Key? key}) : super(key: key);
@@ -201,6 +202,26 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                                 builder: (context) => Container(
                                       child: form.Form(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial('Latex', Colors.black,
+                                size() * 3.5, TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child: latex.Latex(),
                                     )),
                           );
                         }),

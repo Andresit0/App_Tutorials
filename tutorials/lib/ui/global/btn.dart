@@ -41,7 +41,7 @@ Widget btnIcon(
       primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          side: BorderSide(color: borderColor, width: borderWidth)),
+          side: BorderSide(color: Colors.transparent, width: borderWidth)),
     ),
     onPressed: () => onPressed(),
     child: Container(
