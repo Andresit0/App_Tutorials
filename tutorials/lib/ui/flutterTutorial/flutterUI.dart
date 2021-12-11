@@ -7,6 +7,7 @@ import 'button/button.dart' as button;
 import 'dialog/dialog.dart' as dialog;
 import 'font/font.dart' as font;
 import 'color/color.dart' as color;
+import 'countdown/countDown.dart' as countdown;
 import 'speak/speak.dart' as speak;
 import 'form/form.dart' as form;
 import 'reorderable/reorderable.dart' as reorderable;
@@ -17,6 +18,8 @@ import 'encrypt/encrypt.dart' as encrypt;
 import 'notification/notification.dart' as notification;
 import 'publishApp/publishApp.dart' as publishApp;
 import 'latex/latex.dart' as latex;
+import 'streamcontroller/streamcontroller.dart' as streamController;
+import 'rive/rive.dart' as rive;
 
 class FlutterUI extends StatefulWidget {
   FlutterUI({Key? key}) : super(key: key);
@@ -119,6 +122,29 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                               builder: (context) =>
                                   Container(child: color.Colors()),
+                            ),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
+                                'Countdown Timer',
+                                Colors.black,
+                                size() * 2.8,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  Container(child: countdown.Countdown()),
                             ),
                           );
                         }),
@@ -238,7 +264,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Notification',
                                 Colors.black,
-                                size() * 3.5,
+                                size() * 2.8,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,
@@ -268,6 +294,26 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                                 builder: (context) => Container(
                                       child: reorderable.Reorderable(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial('Rive', Colors.black,
+                                size() * 3.5, TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child: rive.Rive(),
                                     )),
                           );
                         }),
@@ -357,6 +403,30 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                                 builder: (context) => Container(
                                       child: speak.Speak(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
+                                'Streamcontroller',
+                                Colors.black,
+                                size() * 3.5,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child:
+                                          streamController.Streamcontroller(),
                                     )),
                           );
                         }),

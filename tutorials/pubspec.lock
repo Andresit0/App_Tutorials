@@ -111,6 +111,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_countdown_timer:
+    dependency: "direct main"
+    description:
+      name: flutter_countdown_timer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.0"
   flutter_slidable:
     dependency: "direct main"
     description:
@@ -146,6 +153,13 @@ packages:
     dependency: "direct main"
     description:
       name: google_fonts
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
+  graphs:
+    dependency: transitive
+    description:
+      name: graphs
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
@@ -282,6 +296,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.1"
+  rive:
+    dependency: "direct main"
+    description:
+      name: rive
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.7.28"
   sky_engine:
     dependency: transitive
     description: flutter
