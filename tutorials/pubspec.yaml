@@ -60,7 +60,7 @@ flutter:
     - lib/ui/img/tutorial/chialisp/
     - lib/ui/img/tutorial/flutter/
     - lib/ui/img/tutorial/postgres/
-    - lib/ui/flutterTutorial/rive/
+    - lib/ui/flutterTutorial/rive/skills.riv
     - lib/ui/chialispTutorial/basicInformation/chialisp.pdf
   #   - images/a_dot_ham.jpeg
 

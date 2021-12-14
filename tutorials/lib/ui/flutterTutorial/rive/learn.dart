@@ -6,7 +6,7 @@ import '/ui/global/func.dart' as globalFunc;
 import '/ui/img/icon/icon_downloaded.dart' as iconDownloaded;
 import 'code.dart' as code;
 
-Widget learn(double size, BuildContext context) {
+Widget learn(double size, BuildContext context, Widget riveWidget) {
   return StatefulBuilder(builder: (context, setState) {
     return Expanded(
       child: SingleChildScrollView(
@@ -26,6 +26,7 @@ Widget learn(double size, BuildContext context) {
                       .openAWeb("https://github.com/Andresit0/Rive_Flutter");
                 }),
               ),
+              riveWidget,
               Container(
                 alignment: Alignment.topLeft,
                 child: globalFont.titleBlock('Dependencie:',
