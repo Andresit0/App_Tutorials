@@ -14,6 +14,7 @@ import 'reorderable/reorderable.dart' as reorderable;
 import 'writeRead/writeRead.dart' as writeRead;
 import 'slidable/slidable.dart' as slidable;
 import 'pageView/pageView.dart' as pageView;
+import 'pdf/pdf.dart' as pdf;
 import 'encrypt/encrypt.dart' as encrypt;
 import 'notification/notification.dart' as notification;
 import 'publishApp/publishApp.dart' as publishApp;
@@ -337,6 +338,26 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                                 builder: (context) => Container(
                                       child: pageView.PageView(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: 70,
+                        height: 70,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial('PDF', Colors.black,
+                                size() * 3.5, TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child: pdf.Pdf(),
                                     )),
                           );
                         }),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp_btn_color_dialog_font/ui/chialispTutorial/chialisp.dart';
 import 'package:temp_btn_color_dialog_font/ui/postgresTutorial/postgresUI.dart';
 import 'dart:ui';
 import '/ui/flutterTutorial/flutterUI.dart';
@@ -257,6 +258,28 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                         Container(
                           child: Row(
                             children: [
+                              Container(
+                                width: size() * 22,
+                                height: size() * 22,
+                                child: globalBtn.btnImg(
+                                    Colors.transparent,
+                                    EdgeInsets.only(top: 0),
+                                    Colors.black,
+                                    size() * 16,
+                                    360,
+                                    1,
+                                    Theme.of(context).primaryColor,
+                                    globalVar.imgChialisp, () async {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          Container(child: Chialisp()),
+                                    ),
+                                  );
+                                }),
+                              ),
+                              Padding(padding: EdgeInsets.only(left: 10)),
                               Container(
                                 width: size() * 22,
                                 height: size() * 22,
