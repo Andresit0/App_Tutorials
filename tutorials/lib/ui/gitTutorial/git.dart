@@ -3,15 +3,15 @@ import 'package:flutter/foundation.dart' as isWeb;
 import '/ui/global/clr.dart' as globalClr;
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
-import 'basicInformation/basicInformation.dart' as basicInformation;
+import 'tutorial/tutorialGit/tutorial.dart' as tutorialLatex;
 
-class Chialisp extends StatefulWidget {
-  Chialisp({Key? key}) : super(key: key);
+class Git extends StatefulWidget {
+  Git({Key? key}) : super(key: key);
   @override
-  ChialispPageState createState() => ChialispPageState();
+  GitPageState createState() => GitPageState();
 }
 
-class ChialispPageState extends State<Chialisp> {
+class GitPageState extends State<Git> {
   @override
   Widget build(BuildContext context) {
     Color colorPrimary = Theme.of(context).primaryColor;
@@ -40,7 +40,7 @@ class ChialispPageState extends State<Chialisp> {
         title: Container(
           width: double.infinity,
           child: globalFont.strDeveloperBody(
-              'Chialisp',
+              'Git',
               false,
               globalClr.colorPrimaryTextIcon(colorPrimary),
               size() * 8,
@@ -85,7 +85,7 @@ class ChialispPageState extends State<Chialisp> {
                             context,
                             MaterialPageRoute(
                               builder: (context) => Container(
-                                child: basicInformation.BasicInformation(),
+                                child: tutorialLatex.TutorialPDF(),
                               ),
                             ),
                           );

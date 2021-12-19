@@ -49,4 +49,6 @@ class IconDownloaded {
       IconData(0xf3ab, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData brain =
       IconData(0xf5dc, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData git =
+      IconData(0xf1d3, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

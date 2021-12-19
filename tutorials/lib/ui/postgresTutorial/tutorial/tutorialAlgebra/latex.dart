@@ -614,11 +614,15 @@ class TeXViewDocumentExamples extends StatelessWidget {
   Widget build(BuildContext context) {
     Color primaryColor = Theme.of(context).primaryColorDark;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
+        color: Colors.white,
+        height: double.infinity,
         padding: EdgeInsets.all(10),
         child: TeXView(
-          height: double.infinity,
+          style: TeXViewStyle(
+            contentColor: Colors.black,
+            backgroundColor: Colors.white,
+          ),
           renderingEngine: renderingEngine,
           child: TeXViewColumn(children: [
             introduction(primaryColor),

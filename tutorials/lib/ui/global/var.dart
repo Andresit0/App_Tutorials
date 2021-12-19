@@ -3,6 +3,7 @@ String imgFactecApp = 'lib/ui/img/appPublished/factec.png';
 String imgHablaAndreaApp = 'lib/ui/img/appPublished/hablaAndrea.png';
 String imgMubicateApp = 'lib/ui/img/appPublished/mubicate.png';
 String imgChialisp = 'lib/ui/img/tutorial/chialisp/chialisp.png';
+String imgGit = 'lib/ui/img/tutorial/git/git.png';
 String imgFlutter = 'lib/ui/img/tutorial/flutter/flutter.png';
 String imgPostgres = 'lib/ui/img/tutorial/postgres/postgres.png';
 String imgFlutterBtn = 'lib/ui/img/tutorial/flutter/btnExample.png';

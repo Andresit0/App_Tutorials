@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' as isWeb;
 import '/ui/global/clr.dart' as globalClr;
 import '/ui/global/font.dart' as globalFont;
-import 'learn.dart' as learn;
+import 'latex.dart' as latex;
 
-class Pdf extends StatefulWidget {
-  Pdf({Key? key}) : super(key: key);
+class TutorialPDF extends StatefulWidget {
+  TutorialPDF({Key? key}) : super(key: key);
   @override
-  PdfPageState createState() => PdfPageState();
+  TutorialPDFPageState createState() => TutorialPDFPageState();
 }
 
-class PdfPageState extends State<Pdf> {
+class TutorialPDFPageState extends State<TutorialPDF> {
   @override
   Widget build(BuildContext context) {
     Color colorPrimary = Theme.of(context).primaryColor;
@@ -39,19 +39,14 @@ class PdfPageState extends State<Pdf> {
         title: Container(
           width: double.infinity,
           child: globalFont.strDeveloperBody(
-              'Pdf',
+              'Git Tutorial',
               false,
               globalClr.colorPrimaryTextIcon(colorPrimary),
               size() * 8,
               TextAlign.center),
         ),
       ),
-      body: Container(
-          child: Column(
-        children: [
-          learn.learn(size(), context),
-        ],
-      )),
+      body: latex.TeXViewDocumentExamples(),
     );
   }
 }

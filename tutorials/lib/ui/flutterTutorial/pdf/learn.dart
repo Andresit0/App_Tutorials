@@ -62,8 +62,8 @@ Widget learn(double size, BuildContext context) {
                 Container(
                   width: 1000,
                   height: 500,
-                  child: SfPdfViewer.network(
-                    'https://github.com/Andresit0/PDF_Viewer_Flutter',
+                  child: SfPdfViewer.asset(
+                    'lib/ui/chialispTutorial/basicInformation/chialisp.pdf',
                     key: _pdfViewerKey,
                   ),
                 )
