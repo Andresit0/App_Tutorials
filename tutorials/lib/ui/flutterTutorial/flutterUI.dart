@@ -52,13 +52,20 @@ class FlutterUIPageState extends State<FlutterUI> {
       return size;
     }
 
-    double widthHeightButton = size() * 65;
-    double letterSize = size() * 10;
-    double subtitleSize = size() * 14;
+    double widthButton = 0;
+    double heightButton = 0;
+    double letterSize = 0;
+    double subtitleSize = 0;
     if (screenConstHeight > screenConstWidth) {
-      widthHeightButton = size() * 39;
+      widthButton = size() * 50;
+      heightButton = size() * 20;
       letterSize = size() * 6;
-      subtitleSize = size() * 10;
+      subtitleSize = size() * 8;
+    } else {
+      widthButton = size() * 55;
+      heightButton = size() * 25;
+      letterSize = size() * 8;
+      subtitleSize = size() * 8;
     }
 
     return Scaffold(
@@ -95,8 +102,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                     runSpacing: 20,
                     children: [
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -118,8 +125,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -138,8 +145,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -161,8 +168,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -181,8 +188,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -204,8 +211,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -224,8 +231,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -244,8 +251,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -264,8 +271,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -287,8 +294,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -310,8 +317,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -330,8 +337,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -353,8 +360,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -373,8 +380,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -396,8 +403,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -419,8 +426,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -439,8 +446,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -460,8 +467,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: widthHeightButton,
-                        height: widthHeightButton,
+                        width: widthButton,
+                        height: heightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
