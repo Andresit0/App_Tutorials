@@ -35,17 +35,21 @@ class LatexPageState extends State<Latex> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Container(
-          width: double.infinity,
-          child: globalFont.strDeveloperBody(
-              'Latex',
-              false,
-              globalClr.colorPrimaryTextIcon(colorPrimary),
-              size() * 8,
-              TextAlign.center),
-        ),
-      ),
+      appBar: !isWeb.kIsWeb
+          ? AppBar(
+              title: Container(
+                width: double.infinity,
+                child: globalFont.strDeveloperBody(
+                    'Latex',
+                    false,
+                    globalClr.colorPrimaryTextIcon(colorPrimary),
+                    size() * 8,
+                    TextAlign.center),
+              ),
+            )
+          : AppBar(
+              toolbarHeight: 0,
+            ),
       body: Container(
           child: Column(
         children: [

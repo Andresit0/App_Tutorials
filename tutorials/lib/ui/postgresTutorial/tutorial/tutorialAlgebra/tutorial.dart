@@ -35,17 +35,21 @@ class TutorialPDFPageState extends State<TutorialPDF> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Container(
-          width: double.infinity,
-          child: globalFont.strDeveloperBody(
-              'Postgres Tutorial',
-              false,
-              globalClr.colorPrimaryTextIcon(colorPrimary),
-              size() * 8,
-              TextAlign.center),
-        ),
-      ),
+      appBar: !isWeb.kIsWeb
+          ? AppBar(
+              title: Container(
+                width: double.infinity,
+                child: globalFont.strDeveloperBody(
+                    'Postgres Tutorial',
+                    false,
+                    globalClr.colorPrimaryTextIcon(colorPrimary),
+                    size() * 8,
+                    TextAlign.center),
+              ),
+            )
+          : AppBar(
+              toolbarHeight: 0,
+            ),
       body: latex.TeXViewDocumentExamples(),
     );
   }

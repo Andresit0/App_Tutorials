@@ -52,15 +52,25 @@ class FlutterUIPageState extends State<FlutterUI> {
       return size;
     }
 
+    double widthHeightButton = size() * 65;
+    double letterSize = size() * 10;
+    double subtitleSize = size() * 14;
+    if (screenConstHeight > screenConstWidth) {
+      widthHeightButton = size() * 39;
+      letterSize = size() * 6;
+      subtitleSize = size() * 10;
+    }
+
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: isWeb.kIsWeb ? false : true,
         title: Container(
           width: double.infinity,
           child: globalFont.strDeveloperBody(
               'Flutter',
               false,
               globalClr.colorPrimaryTextIcon(colorPrimary),
-              size() * 8,
+              30,
               TextAlign.center),
         ),
       ),
@@ -75,7 +85,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                   alignment: Alignment.topLeft,
                   width: double.infinity,
                   child: globalFont.strDeveloperBody('Templates', false,
-                      Colors.black, size() * 6, TextAlign.center),
+                      Colors.black, subtitleSize, TextAlign.center),
                 ),
                 Padding(padding: EdgeInsets.only(top: 15)),
                 Container(
@@ -85,8 +95,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                     runSpacing: 20,
                     children: [
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -96,7 +106,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Buttons',
                                 Colors.black,
-                                size() * 3.5,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,
@@ -108,8 +118,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -117,7 +127,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial('Color', Colors.black,
-                                size() * 3.5, TextAlign.center), () {
+                                letterSize, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -128,8 +138,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -139,7 +149,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Countdown Timer',
                                 Colors.black,
-                                size() * 2.8,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,
@@ -151,8 +161,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -160,7 +170,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial('Dialog', Colors.black,
-                                size() * 3.5, TextAlign.center), () {
+                                letterSize, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -171,8 +181,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -182,7 +192,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Encrypt',
                                 Colors.black,
-                                size() * 3.5,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,
@@ -194,8 +204,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -203,7 +213,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial('Font', Colors.black,
-                                size() * 3.5, TextAlign.center), () {
+                                letterSize, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -214,8 +224,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -223,7 +233,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial('Form', Colors.black,
-                                size() * 3.5, TextAlign.center), () {
+                                letterSize, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -234,8 +244,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -243,7 +253,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial('Latex', Colors.black,
-                                size() * 3.5, TextAlign.center), () {
+                                letterSize, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -254,8 +264,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -265,7 +275,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Notification',
                                 Colors.black,
-                                size() * 2.8,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,
@@ -277,8 +287,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -288,7 +298,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Reorder',
                                 Colors.black,
-                                size() * 3.5,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,
@@ -300,8 +310,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -309,7 +319,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial('Rive', Colors.black,
-                                size() * 3.5, TextAlign.center), () {
+                                letterSize, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -320,8 +330,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -331,7 +341,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Page \n View',
                                 Colors.black,
-                                size() * 3.5,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,
@@ -343,8 +353,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -352,7 +362,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial('PDF', Colors.black,
-                                size() * 3.5, TextAlign.center), () {
+                                letterSize, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -363,8 +373,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -374,7 +384,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Publish \n App',
                                 Colors.black,
-                                size() * 3.5,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,
@@ -386,8 +396,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -397,7 +407,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Slidable',
                                 Colors.black,
-                                size() * 3.5,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,
@@ -409,8 +419,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -418,7 +428,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial('Speak', Colors.black,
-                                size() * 3.5, TextAlign.center), () {
+                                letterSize, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -429,19 +439,16 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
                             15,
                             1,
                             colorPrimary,
-                            globalFont.titleIconTutorial(
-                                'Streamcontroller',
-                                Colors.black,
-                                size() * 3.5,
-                                TextAlign.center), () {
+                            globalFont.titleIconTutorial('Stream', Colors.black,
+                                letterSize, TextAlign.center), () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -453,8 +460,8 @@ class FlutterUIPageState extends State<FlutterUI> {
                         }),
                       ),
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -464,7 +471,7 @@ class FlutterUIPageState extends State<FlutterUI> {
                             globalFont.titleIconTutorial(
                                 'Write \n Read',
                                 Colors.black,
-                                size() * 3.5,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,

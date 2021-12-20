@@ -37,8 +37,8 @@ Widget factec(double sizeFunction, BuildContext context) {
       children: [
         btnApp(sizeFunction, globalVar.imgFactecApp, 20, [
           globalBtn.btnIconCircle(
-              sizeFunction * 11,
-              sizeFunction * 6,
+              sizeFunction * 12,
+              sizeFunction * 4,
               true,
               Colors.black,
               globalIconDown.IconDownloaded.google_play,
@@ -58,8 +58,8 @@ Widget hablaAndrea(double sizeFunction, BuildContext context) {
       children: [
         btnApp(sizeFunction, globalVar.imgHablaAndreaApp, 20, [
           globalBtn.btnIconCircle(
-              sizeFunction * 11,
-              sizeFunction * 6,
+              sizeFunction * 12,
+              sizeFunction * 4,
               true,
               Colors.black,
               globalIconDown.IconDownloaded.google_play,
@@ -79,8 +79,8 @@ Widget mubicate(double sizeFunction, BuildContext context) {
       children: [
         btnApp(sizeFunction, globalVar.imgMubicateApp, 21, [
           globalBtn.btnIconCircle(
-              sizeFunction * 11,
-              sizeFunction * 6,
+              sizeFunction * 12,
+              sizeFunction * 4,
               true,
               Colors.black,
               globalIconDown.IconDownloaded.google_play,

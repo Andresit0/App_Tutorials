@@ -50,8 +50,8 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
           children: [
             Container(
               alignment: Alignment.topCenter,
-              width: size() * 35,
-              height: size() * 35,
+              width: size() * 50,
+              height: size() * 50,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
@@ -69,8 +69,8 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         globalBtn.btnIconCircle(
-                            size() * 11,
-                            size() * 6,
+                            size() * 16,
+                            size() * 7,
                             false,
                             Colors.black,
                             IconDownloaded.github_circled,
@@ -78,8 +78,8 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                           globalFunc.openAWeb("https://github.com/Andresit0");
                         }),
                         globalBtn.btnIconCircle(
-                            size() * 11,
-                            size() * 6,
+                            size() * 16,
+                            size() * 7,
                             false,
                             Colors.black,
                             IconDownloaded.stackoverflow,
@@ -87,7 +87,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                           globalFunc.openAWeb(
                               "https://stackoverflow.com/users/11075752/andres-riofrio");
                         }),
-                        globalBtn.btnIconCircle(size() * 11, size() * 6, false,
+                        globalBtn.btnIconCircle(size() * 16, size() * 7, false,
                             Colors.black, IconDownloaded.facebook, context, () {
                           globalFunc.openAWeb(
                               "https://www.facebook.com/profile.php?id=100075269015936");
@@ -100,9 +100,9 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
             ),
             Padding(padding: EdgeInsets.only(top: 20)),
             globalFont.strDeveloperName(
-                'Andrés', false, Colors.white, size() * 4, TextAlign.center),
+                'Andrés', false, Colors.white, size() * 8, TextAlign.center),
             globalFont.strDeveloperName('Riofrío-Valdivieso', false,
-                Colors.white, size() * 4, TextAlign.center),
+                Colors.white, size() * 6, TextAlign.center),
           ],
         ),
       );
@@ -115,8 +115,8 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
           children: [
             Container(
               alignment: Alignment.topCenter,
-              width: size() * 35,
-              height: size() * 35,
+              width: size() * 50,
+              height: size() * 50,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
@@ -134,8 +134,8 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         globalBtn.btnIconCircle(
-                            size() * 11,
-                            size() * 6,
+                            size() * 16,
+                            size() * 7,
                             false,
                             Colors.black,
                             IconDownloaded.github_circled,
@@ -143,8 +143,8 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                           globalFunc.openAWeb("https://github.com/Andresit0");
                         }),
                         globalBtn.btnIconCircle(
-                            size() * 11,
-                            size() * 6,
+                            size() * 16,
+                            size() * 7,
                             false,
                             Colors.black,
                             IconDownloaded.stackoverflow,
@@ -152,7 +152,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                           globalFunc.openAWeb(
                               "https://stackoverflow.com/users/11075752/andres-riofrio");
                         }),
-                        globalBtn.btnIconCircle(size() * 11, size() * 6, false,
+                        globalBtn.btnIconCircle(size() * 16, size() * 7, false,
                             Colors.black, IconDownloaded.facebook, context, () {
                           globalFunc.openAWeb(
                               "https://www.facebook.com/profile.php?id=100075269015936");
@@ -167,9 +167,9 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
             Column(
               children: [
                 globalFont.strDeveloperName('Andrés', false, Colors.white,
-                    size() * 4, TextAlign.center),
-                globalFont.strDeveloperName('Riofrío-Valdivieso', false,
-                    Colors.white, size() * 4, TextAlign.center),
+                    size() * 8, TextAlign.center),
+                globalFont.strDeveloperName(' Riofrío-Valdivieso', false,
+                    Colors.white, size() * 6, TextAlign.center),
               ],
             ),
           ],
@@ -186,7 +186,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
       return Expanded(
         flex: 1,
         child: Container(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.only(left: 10, bottom: 5),
           child: Container(
             alignment: Alignment.topLeft,
             child: SingleChildScrollView(
@@ -203,8 +203,8 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        width: size() * 15,
-                        height: size() * 15,
+                        width: size() * 19,
+                        height: size() * 19,
                         child: globalBtn.btnIcon(
                             Colors.transparent,
                             Colors.white,
@@ -252,163 +252,167 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                               'Tutorials & Templates',
                               false,
                               Colors.black,
-                              20,
+                              size() * 5,
                               TextAlign.left),
                         ),
-                        Padding(padding: EdgeInsets.only(top: 20)),
+                        Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
-                          child: Row(
-                            children: [
-                              Container(
-                                width: size() * 22,
-                                height: size() * 22,
-                                child: globalBtn.btnImg(
-                                    Colors.transparent,
-                                    EdgeInsets.only(top: 0),
-                                    Colors.black,
-                                    size() * 16,
-                                    360,
-                                    1,
-                                    Theme.of(context).primaryColor,
-                                    globalVar.imgChialisp, () async {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          Container(child: Chialisp()),
-                                    ),
-                                  );
-                                }),
-                              ),
-                              Padding(padding: EdgeInsets.only(left: 10)),
-                              Container(
-                                width: size() * 22,
-                                height: size() * 22,
-                                child: globalBtn.btnImg(
-                                    Colors.transparent,
-                                    EdgeInsets.only(top: 0),
-                                    Colors.black,
-                                    size() * 16,
-                                    360,
-                                    1,
-                                    Theme.of(context).primaryColor,
-                                    globalVar.imgGit, () async {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          Container(child: Git()),
-                                    ),
-                                  );
-                                }),
-                              ),
-                              Padding(padding: EdgeInsets.only(left: 10)),
-                              Container(
-                                width: size() * 22,
-                                height: size() * 22,
-                                child: globalBtn.btnImg(
-                                    Colors.transparent,
-                                    EdgeInsets.only(top: 0),
-                                    Colors.black,
-                                    size() * 16,
-                                    360,
-                                    1,
-                                    Theme.of(context).primaryColor,
-                                    globalVar.imgFlutter, () async {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          Container(child: FlutterUI()),
-                                    ),
-                                  );
-                                }),
-                              ),
-                              Padding(padding: EdgeInsets.only(left: 10)),
-                              Container(
-                                width: size() * 22,
-                                height: size() * 22,
-                                child: globalBtn.btnImg(
-                                    Colors.transparent,
-                                    EdgeInsets.only(top: 0),
-                                    Colors.black,
-                                    size() * 16,
-                                    360,
-                                    1,
-                                    Theme.of(context).primaryColor,
-                                    globalVar.imgPostgres, () async {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          Container(child: PostgresUI()),
-                                    ),
-                                  );
-                                }),
-                              ),
-                            ],
+                          alignment: Alignment.topLeft,
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: size() * 25,
+                                  height: size() * 25,
+                                  child: globalBtn.btnImg(
+                                      Colors.transparent,
+                                      EdgeInsets.only(top: 0),
+                                      Colors.black,
+                                      size() * 18,
+                                      360,
+                                      1,
+                                      Theme.of(context).primaryColor,
+                                      globalVar.imgChialisp, () async {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            Container(child: Chialisp()),
+                                      ),
+                                    );
+                                  }),
+                                ),
+                                Padding(padding: EdgeInsets.only(left: 10)),
+                                Container(
+                                  width: size() * 25,
+                                  height: size() * 25,
+                                  child: globalBtn.btnImg(
+                                      Colors.transparent,
+                                      EdgeInsets.only(top: 0),
+                                      Colors.black,
+                                      size() * 18,
+                                      360,
+                                      1,
+                                      Theme.of(context).primaryColor,
+                                      globalVar.imgGit, () async {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            Container(child: Git()),
+                                      ),
+                                    );
+                                  }),
+                                ),
+                                Padding(padding: EdgeInsets.only(left: 10)),
+                                Container(
+                                  width: size() * 25,
+                                  height: size() * 25,
+                                  child: globalBtn.btnImg(
+                                      Colors.transparent,
+                                      EdgeInsets.only(top: 0),
+                                      Colors.black,
+                                      size() * 18,
+                                      360,
+                                      1,
+                                      Theme.of(context).primaryColor,
+                                      globalVar.imgFlutter, () async {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            Container(child: FlutterUI()),
+                                      ),
+                                    );
+                                  }),
+                                ),
+                                Padding(padding: EdgeInsets.only(left: 10)),
+                                Container(
+                                  width: size() * 25,
+                                  height: size() * 25,
+                                  child: globalBtn.btnImg(
+                                      Colors.transparent,
+                                      EdgeInsets.only(top: 0),
+                                      Colors.black,
+                                      size() * 18,
+                                      360,
+                                      1,
+                                      Theme.of(context).primaryColor,
+                                      globalVar.imgPostgres, () async {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            Container(child: PostgresUI()),
+                                      ),
+                                    );
+                                  }),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Padding(padding: EdgeInsets.only(top: 20)),
+                        Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
                           width: double.infinity,
                           child: globalFont.strDeveloperBody('Published Apps',
-                              false, Colors.black, 20, TextAlign.left),
+                              false, Colors.black, size() * 5, TextAlign.left),
                         ),
-                        Padding(padding: EdgeInsets.only(top: 20)),
+                        Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
                           child: Row(
                             children: [
-                              globalIcon.factec(size(), context),
+                              globalIcon.factec(size() * 1.1, context),
                               Padding(padding: EdgeInsets.only(left: 10)),
-                              globalIcon.hablaAndrea(size(), context),
+                              globalIcon.hablaAndrea(size() * 1.1, context),
                               Padding(padding: EdgeInsets.only(left: 10)),
-                              globalIcon.mubicate(size(), context),
+                              globalIcon.mubicate(size() * 1.1, context),
                               Padding(padding: EdgeInsets.only(left: 10)),
                             ],
                           ),
                         ),
-                        Padding(padding: EdgeInsets.only(top: 20)),
+                        Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
                           width: double.infinity,
                           child: globalFont.strDeveloperBody('Responsible Apps',
-                              false, Colors.black, 20, TextAlign.left),
+                              false, Colors.black, size() * 5, TextAlign.left),
                         ),
-                        Padding(padding: EdgeInsets.only(top: 20)),
+                        Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
                           child: Row(
                             children: [
-                              globalIcon.hablaAndrea(size(), context),
+                              globalIcon.hablaAndrea(size() * 1.1, context),
                               Padding(padding: EdgeInsets.only(left: 10)),
                             ],
                           ),
                         ),
-                        Padding(padding: EdgeInsets.only(top: 20)),
+                        Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
                           width: double.infinity,
                           child: globalFont.strDeveloperBody('Papers', false,
-                              Colors.black, 20, TextAlign.left),
+                              Colors.black, size() * 5, TextAlign.left),
                         ),
-                        Padding(padding: EdgeInsets.only(top: 20)),
+                        Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
                           child: Row(
                             children: [
                               Container(
-                                width: size() * 20,
-                                height: size() * 20,
+                                width: size() * 24,
+                                height: size() * 24,
                                 child: globalBtn.btnIconUTextD(
                                     Colors.transparent,
                                     EdgeInsets.only(top: 3),
                                     Colors.black,
                                     Colors.black,
-                                    size() * 10,
+                                    size() * 12,
                                     360,
                                     1,
                                     Colors.black,
                                     Icons.speaker_phone,
                                     Text(
                                       'RFID',
-                                      style: TextStyle(fontSize: 10),
+                                      style: TextStyle(fontSize: size() * 3),
                                     ), () async {
                                   globalFunc.openAWeb(
                                       "https://link.springer.com/chapter/10.1007/978-3-030-32033-1_27");
@@ -416,21 +420,21 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                               ),
                               Padding(padding: EdgeInsets.only(left: 10)),
                               Container(
-                                width: size() * 20,
-                                height: size() * 20,
+                                width: size() * 24,
+                                height: size() * 24,
                                 child: globalBtn.btnIconUTextD(
                                     Colors.transparent,
                                     EdgeInsets.only(top: 3),
                                     Colors.black,
                                     Colors.black,
-                                    size() * 10,
+                                    size() * 12,
                                     360,
                                     1,
                                     Colors.black,
                                     IconDownloaded.brain,
                                     Text(
                                       'Tumor',
-                                      style: TextStyle(fontSize: 10),
+                                      style: TextStyle(fontSize: size() * 3),
                                     ), () async {
                                   globalFunc.openAWeb(
                                       "https://link.springer.com/chapter/10.1007/978-3-030-33617-2_10");
@@ -438,21 +442,21 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                               ),
                               Padding(padding: EdgeInsets.only(left: 10)),
                               Container(
-                                width: size() * 20,
-                                height: size() * 20,
+                                width: size() * 24,
+                                height: size() * 24,
                                 child: globalBtn.btnIconUTextD(
                                     Colors.transparent,
                                     EdgeInsets.only(top: 3),
                                     Colors.black,
                                     Colors.black,
-                                    size() * 10,
+                                    size() * 12,
                                     360,
                                     1,
                                     Colors.black,
                                     IconDownloaded.gamepad,
                                     Text(
                                       'Math',
-                                      style: TextStyle(fontSize: 10),
+                                      style: TextStyle(fontSize: size() * 3),
                                     ), () async {
                                   globalFunc.openAWeb(
                                       "http://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0007348605540559");
@@ -484,7 +488,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
         return Row(
           children: [
             Container(
-                color: Colors.black, width: size() * 50, child: presentation()),
+                color: Colors.black, width: size() * 70, child: presentation()),
             information(),
           ],
         );

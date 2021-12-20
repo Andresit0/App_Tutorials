@@ -35,15 +35,25 @@ class PostgresUIPageState extends State<PostgresUI> {
       return size;
     }
 
+    double widthHeightButton = size() * 65;
+    double letterSize = size() * 10;
+    double subtitleSize = size() * 14;
+    if (screenConstHeight > screenConstWidth) {
+      widthHeightButton = size() * 39;
+      letterSize = size() * 6;
+      subtitleSize = size() * 10;
+    }
+
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: isWeb.kIsWeb ? false : true,
         title: Container(
           width: double.infinity,
           child: globalFont.strDeveloperBody(
               'Postgres',
               false,
               globalClr.colorPrimaryTextIcon(colorPrimary),
-              size() * 8,
+              30,
               TextAlign.center),
         ),
       ),
@@ -58,7 +68,7 @@ class PostgresUIPageState extends State<PostgresUI> {
                   alignment: Alignment.topLeft,
                   width: double.infinity,
                   child: globalFont.strDeveloperBody('Tutorial', false,
-                      Colors.black, size() * 6, TextAlign.center),
+                      Colors.black, subtitleSize, TextAlign.center),
                 ),
                 Padding(padding: EdgeInsets.only(top: 15)),
                 Container(
@@ -68,8 +78,8 @@ class PostgresUIPageState extends State<PostgresUI> {
                     runSpacing: 20,
                     children: [
                       Container(
-                        width: 70,
-                        height: 70,
+                        width: widthHeightButton,
+                        height: widthHeightButton,
                         child: globalBtn.btnText(
                             Colors.transparent,
                             colorPrimary,
@@ -79,7 +89,7 @@ class PostgresUIPageState extends State<PostgresUI> {
                             globalFont.titleIconTutorial(
                                 'Algebra',
                                 Colors.black,
-                                size() * 3.5,
+                                letterSize,
                                 TextAlign.center), () {
                           Navigator.push(
                             context,

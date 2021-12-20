@@ -48,17 +48,21 @@ class SpeakPageState extends State<Speak> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Container(
-          width: double.infinity,
-          child: globalFont.strDeveloperBody(
-              'Speak',
-              false,
-              globalClr.colorPrimaryTextIcon(colorPrimary),
-              size() * 8,
-              TextAlign.center),
-        ),
-      ),
+      appBar: !isWeb.kIsWeb
+          ? AppBar(
+              title: Container(
+                width: double.infinity,
+                child: globalFont.strDeveloperBody(
+                    'Speak',
+                    false,
+                    globalClr.colorPrimaryTextIcon(colorPrimary),
+                    size() * 8,
+                    TextAlign.center),
+              ),
+            )
+          : AppBar(
+              toolbarHeight: 0,
+            ),
       body: Container(
           child: Column(
         children: [

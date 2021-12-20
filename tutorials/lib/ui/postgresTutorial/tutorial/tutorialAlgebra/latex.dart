@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_tex/flutter_tex.dart';
+import 'package:flutter/foundation.dart' as isWeb;
 
 TeXViewWidget introduction(Color titleColor) {
   return _teXViewWidget(
@@ -615,7 +615,7 @@ class TeXViewDocumentExamples extends StatelessWidget {
     Color primaryColor = Theme.of(context).primaryColorDark;
     return Scaffold(
       body: Container(
-        color: Colors.white,
+        color: isWeb.kIsWeb ? Colors.white : Colors.black,
         height: double.infinity,
         padding: EdgeInsets.all(10),
         child: TeXView(

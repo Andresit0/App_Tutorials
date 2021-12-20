@@ -35,17 +35,21 @@ class PublishAppPageState extends State<PublishApp> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Container(
-          width: double.infinity,
-          child: globalFont.strDeveloperBody(
-              'Publish An App',
-              false,
-              globalClr.colorPrimaryTextIcon(colorPrimary),
-              size() * 8,
-              TextAlign.center),
-        ),
-      ),
+      appBar: !isWeb.kIsWeb
+          ? AppBar(
+              title: Container(
+                width: double.infinity,
+                child: globalFont.strDeveloperBody(
+                    'Publish An App',
+                    false,
+                    globalClr.colorPrimaryTextIcon(colorPrimary),
+                    size() * 8,
+                    TextAlign.center),
+              ),
+            )
+          : AppBar(
+              toolbarHeight: 0,
+            ),
       body: Container(
           child: Column(
         children: [

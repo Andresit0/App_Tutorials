@@ -35,17 +35,21 @@ class ColorsPageState extends State<Colors> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Container(
-          width: double.infinity,
-          child: globalFont.strDeveloperBody(
-              'Colors',
-              false,
-              globalClr.colorPrimaryTextIcon(colorPrimary),
-              size() * 8,
-              TextAlign.center),
-        ),
-      ),
+      appBar: !isWeb.kIsWeb
+          ? AppBar(
+              title: Container(
+                width: double.infinity,
+                child: globalFont.strDeveloperBody(
+                    'Colors',
+                    false,
+                    globalClr.colorPrimaryTextIcon(colorPrimary),
+                    size() * 8,
+                    TextAlign.center),
+              ),
+            )
+          : AppBar(
+              toolbarHeight: 0,
+            ),
       body: Container(
           child: Column(
         children: [

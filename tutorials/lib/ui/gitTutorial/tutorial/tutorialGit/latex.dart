@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_tex/flutter_tex.dart';
+import 'package:flutter/foundation.dart' as isWeb;
 
 TeXViewWidget introduction(Color titleColor) {
   return _teXViewWidget(
@@ -1682,7 +1683,7 @@ TeXViewWidget gitClient4(Color titleColor) {
   return _teXViewWidget(
       r"<h4>  </h4>",
       r""" <p>
-      Note:  It is possible says what user can or cannot made "~/.ssh/authorized\_keys" adding before SSH\_USER\_KEY the correspondent code. For instance: no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
+      Note:  It is possible says what user can or cannot made "~/.ssh/authorized_keys" adding before SSH_USER_KEY the correspondent code. For instance: no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
       $$ \\ $$
       </p>""",
       titleColor);
@@ -1725,7 +1726,7 @@ class TeXViewDocumentExamples extends StatelessWidget {
     Color primaryColor = Theme.of(context).primaryColorDark;
     return Scaffold(
       body: Container(
-        color: Colors.white,
+        color: isWeb.kIsWeb ? Colors.white : Colors.black,
         padding: EdgeInsets.all(10),
         height: double.infinity,
         child: TeXView(
