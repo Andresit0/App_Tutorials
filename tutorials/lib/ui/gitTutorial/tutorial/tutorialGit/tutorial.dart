@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart' as isWeb;
 import '/ui/global/clr.dart' as globalClr;
 import '/ui/global/font.dart' as globalFont;
 import 'latex.dart' as latex;
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class TutorialPDF extends StatefulWidget {
   TutorialPDF({Key? key}) : super(key: key);
@@ -34,6 +35,8 @@ class TutorialPDFPageState extends State<TutorialPDF> {
       return size;
     }
 
+    final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
+
     return Scaffold(
       appBar: !isWeb.kIsWeb
           ? AppBar(
@@ -50,7 +53,20 @@ class TutorialPDFPageState extends State<TutorialPDF> {
           : AppBar(
               toolbarHeight: 0,
             ),
-      body: latex.TeXViewDocumentExamples(),
+      body: SfPdfViewer.asset(
+        'lib/ui/gitTutorial/tutorial/tutorialGit/git.pdf',
+        key: _pdfViewerKey,
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(
+          Icons.bookmark,
+          color: Colors.white,
+          semanticLabel: 'Bookmark',
+        ),
+        onPressed: () {
+          _pdfViewerKey.currentState?.openBookmarkView();
+        },
+      ),
     );
   }
 }

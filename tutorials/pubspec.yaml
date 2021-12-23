@@ -62,7 +62,9 @@ flutter:
     - lib/ui/img/tutorial/postgres/
     - lib/ui/img/tutorial/git/
     - lib/ui/flutterTutorial/rive/skills.riv
+    - lib/ui/gitTutorial/tutorial/tutorialGit/git.pdf
     - lib/ui/chialispTutorial/basicInformation/chialisp.pdf
+    - lib/ui/postgresTutorial/tutorial/tutorialAlgebra/dbRelationalAlgebra.pdf
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

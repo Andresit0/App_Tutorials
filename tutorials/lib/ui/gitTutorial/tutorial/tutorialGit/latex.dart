@@ -885,7 +885,7 @@ TeXViewWidget confLevel(Color titleColor) {
           &
           \\
           \hline 
-          \texttt{./positoryName/.gitattributes		}			
+          \texttt{./repositoryName/.gitattributes		}			
           &
           \text{folders where can specify what type of files you have when git }
           \\
@@ -1309,7 +1309,7 @@ TeXViewWidget customGitCommand(Color titleColor) {
           \text{working}
           \\
           \hline 
-          \texttt{chmod + [scriptFileName]		}							
+          \texttt{chmod +x [scriptFileName]		}							
           &
           \text{gives execution permissions}
           \\

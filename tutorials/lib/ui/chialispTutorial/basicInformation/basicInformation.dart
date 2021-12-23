@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' as isWeb;
 import '/ui/global/clr.dart' as globalClr;
 import '/ui/global/font.dart' as globalFont;
-import 'learn.dart' as learn;
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class BasicInformation extends StatefulWidget {
   BasicInformation({Key? key}) : super(key: key);
@@ -34,6 +34,8 @@ class BasicInformationPageState extends State<BasicInformation> {
       return size;
     }
 
+    final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
+
     return Scaffold(
       appBar: !isWeb.kIsWeb
           ? AppBar(
@@ -50,12 +52,20 @@ class BasicInformationPageState extends State<BasicInformation> {
           : AppBar(
               toolbarHeight: 0,
             ),
-      body: Container(
-          child: Column(
-        children: [
-          learn.learn(size(), context),
-        ],
-      )),
+      body: SfPdfViewer.asset(
+        'lib/ui/chialispTutorial/basicInformation/chialisp.pdf',
+        key: _pdfViewerKey,
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(
+          Icons.bookmark,
+          color: Colors.white,
+          semanticLabel: 'Bookmark',
+        ),
+        onPressed: () {
+          _pdfViewerKey.currentState?.openBookmarkView();
+        },
+      ),
     );
   }
 }
