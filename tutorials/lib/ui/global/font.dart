@@ -34,12 +34,12 @@ Widget strDeveloperBody(String str, bool colorDynamic, Color color,
         return Text(
           str,
           textAlign: textAlign,
-          style: googleFont.GoogleFonts.novaCut(
+          style: googleFont.GoogleFonts.notoSans(
             textStyle: TextStyle(
               color: colorDynamic
                   ? globalClr.colorPrimaryTextIcon(snapshot.data)
                   : color,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.normal,
               fontSize: fontSize,
               letterSpacing: 3,
             ),
