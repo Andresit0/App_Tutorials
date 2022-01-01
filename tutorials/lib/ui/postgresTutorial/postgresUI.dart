@@ -94,7 +94,7 @@ class PostgresUIPageState extends State<PostgresUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial(
-                                'Algebra',
+                                'Optimization',
                                 Colors.black,
                                 letterSize,
                                 TextAlign.center), () {
