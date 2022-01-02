@@ -4,6 +4,7 @@ import '/ui/global/clr.dart' as globalClr;
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
 import 'tutorial/tutorialAlgebra/tutorial.dart' as tutorialLatex;
+import 'tutorial/division/division.dart' as division;
 
 class PostgresUI extends StatefulWidget {
   PostgresUI({Key? key}) : super(key: key);
@@ -74,7 +75,7 @@ class PostgresUIPageState extends State<PostgresUI> {
                 Container(
                   alignment: Alignment.topLeft,
                   width: double.infinity,
-                  child: globalFont.strDeveloperBody('Tutorial', false,
+                  child: globalFont.strDeveloperBody('Tutorials', false,
                       Colors.black, subtitleSize, TextAlign.center),
                 ),
                 Padding(padding: EdgeInsets.only(top: 15)),
@@ -103,6 +104,46 @@ class PostgresUIPageState extends State<PostgresUI> {
                             MaterialPageRoute(
                               builder: (context) => Container(
                                 child: tutorialLatex.TutorialPDF(),
+                              ),
+                            ),
+                          );
+                        }),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.topLeft,
+                  width: double.infinity,
+                  child: globalFont.strDeveloperBody('Templates', false,
+                      Colors.black, subtitleSize, TextAlign.center),
+                ),
+                Padding(padding: EdgeInsets.only(top: 15)),
+                Container(
+                  alignment: Alignment.center,
+                  child: Wrap(
+                    spacing: 20,
+                    runSpacing: 20,
+                    children: [
+                      Container(
+                        width: widthButton,
+                        height: heightButton,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
+                                'Division Postgres',
+                                Colors.black,
+                                letterSize,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Container(
+                                child: division.DivisionPostgres(),
                               ),
                             ),
                           );
