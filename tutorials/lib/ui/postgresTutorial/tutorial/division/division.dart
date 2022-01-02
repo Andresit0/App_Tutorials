@@ -40,7 +40,7 @@ class DivisionPostgresPageState extends State<DivisionPostgres> {
               title: Container(
                 width: double.infinity,
                 child: globalFont.strDeveloperBody(
-                    'Division Postgres',
+                    'Division',
                     false,
                     globalClr.colorPrimaryTextIcon(colorPrimary),
                     size() * 8,

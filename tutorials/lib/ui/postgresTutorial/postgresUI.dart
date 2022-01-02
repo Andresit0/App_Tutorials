@@ -135,7 +135,7 @@ class PostgresUIPageState extends State<PostgresUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial(
-                                'Division Postgres',
+                                'Division',
                                 Colors.black,
                                 letterSize,
                                 TextAlign.center), () {
