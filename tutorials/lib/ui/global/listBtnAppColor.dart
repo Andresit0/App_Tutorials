@@ -61,10 +61,10 @@ Widget listSpecificColorButton(
 }
 
 // GLOBAL WIDGET COLOR
-Widget buttonToChangeColor(MaterialColor newColor) {
+Widget buttonToChangeColor(double size, MaterialColor newColor) {
   return IconButton(
     splashRadius: 1,
-    iconSize: 200,
+    iconSize: size,
     icon: Icon(
       Icons.color_lens,
       color: newColor,
@@ -75,21 +75,21 @@ Widget buttonToChangeColor(MaterialColor newColor) {
   );
 }
 
-Widget listColorButton() {
+Widget listColorButton(double size) {
   return Container(
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: [
-        buttonToChangeColor(Colors.pink),
-        buttonToChangeColor(Colors.orange),
-        buttonToChangeColor(Colors.yellow),
-        buttonToChangeColor(Colors.blue),
-        buttonToChangeColor(Colors.red),
-        buttonToChangeColor(Colors.green),
-        buttonToChangeColor(Colors.cyan),
-        buttonToChangeColor(Colors.purple),
-        buttonToChangeColor(Colors.grey),
-        buttonToChangeColor(globalClr.colorBlack),
+        buttonToChangeColor(size, Colors.pink),
+        buttonToChangeColor(size, Colors.orange),
+        buttonToChangeColor(size, Colors.yellow),
+        buttonToChangeColor(size, Colors.blue),
+        buttonToChangeColor(size, Colors.red),
+        buttonToChangeColor(size, Colors.green),
+        buttonToChangeColor(size, Colors.cyan),
+        buttonToChangeColor(size, Colors.purple),
+        buttonToChangeColor(size, Colors.grey),
+        buttonToChangeColor(size, globalClr.colorBlack),
       ],
     ),
   );

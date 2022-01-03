@@ -21,6 +21,7 @@ class AndresRiofrio extends StatefulWidget {
 }
 
 class AndresRiofrioPageState extends State<AndresRiofrio> {
+  bool activateColor = false;
   @override
   Widget build(BuildContext context) {
     double screenConstWidth = (MediaQuery.of(context).size.width -
@@ -41,6 +42,35 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
       }
       if (isWeb.kIsWeb) size = size / 1.5;
       return size;
+    }
+
+    Widget colorButton(double iconSize) {
+      return Container(
+        child: Row(
+          children: [
+            activateColor
+                ? Expanded(child: globalListBtnClr.listColorButton(iconSize))
+                : Expanded(child: Container()),
+            Container(
+              color: Colors.transparent,
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                  splashRadius: 1,
+                  iconSize: iconSize,
+                  onPressed: () {
+                    setState(() {
+                      activateColor = !activateColor;
+                    });
+                  },
+                  icon: Icon(
+                    activateColor ? Icons.cancel_outlined : Icons.color_lens,
+                    size: iconSize,
+                    color: Theme.of(context).colorScheme.secondary,
+                  )),
+            ),
+          ],
+        ),
+      );
     }
 
     Widget presentationColumn() {
@@ -192,55 +222,9 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Padding(
-                      padding: EdgeInsets.only(
-                          top: !isWeb.kIsWeb &&
-                                  screenConstHeight < screenConstWidth
-                              ? size() * 10
-                              : 0)),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        width: size() * 19,
-                        height: size() * 19,
-                        child: globalBtn.btnIcon(
-                            Colors.transparent,
-                            Colors.white,
-                            Theme.of(context).primaryColor,
-                            size() * 10,
-                            360,
-                            1,
-                            false,
-                            Colors.black,
-                            Icons.color_lens, () {
-                          setState(() {});
-                          Widget body = Container(
-                            padding: EdgeInsets.all(0),
-                            color: Colors.white,
-                            child: Container(
-                              child: globalListBtnClr.listColorButton(),
-                            ),
-                          );
-                          List<Widget> footer = [];
-                          setState(() {
-                            globalDlg.dialogHeaderBodyFooter(
-                                context,
-                                true,
-                                Theme.of(context).primaryColorDark,
-                                globalFont.strTitleDialog('Color', true,
-                                    Colors.blue, 20, TextAlign.center),
-                                Theme.of(context).primaryColorDark,
-                                body,
-                                footer,
-                                250,
-                                350);
-                          });
-                        }),
-                      ),
-                    ],
-                  ),
+                  Container(
+                      height: size() * 10, child: colorButton(size() * 10)),
+                  Padding(padding: EdgeInsets.only(top: 5)),
                   Container(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
