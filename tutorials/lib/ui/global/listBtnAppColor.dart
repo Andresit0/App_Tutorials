@@ -64,7 +64,7 @@ Widget listSpecificColorButton(
 Widget buttonToChangeColor(double size, MaterialColor newColor) {
   return IconButton(
     splashRadius: 1,
-    iconSize: size,
+    iconSize: size - 1,
     icon: Icon(
       Icons.color_lens,
       color: newColor,

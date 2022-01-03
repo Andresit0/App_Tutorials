@@ -223,7 +223,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
               child: Column(
                 children: [
                   Container(
-                      height: size() * 10, child: colorButton(size() * 10)),
+                      height: size() * 12, child: colorButton(size() * 10)),
                   Padding(padding: EdgeInsets.only(top: 5)),
                   Container(
                     child: Column(
