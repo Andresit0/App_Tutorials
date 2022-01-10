@@ -84,7 +84,7 @@ Widget learn(double size, BuildContext context) {
             Padding(padding: EdgeInsets.only(top: 10)),
             Container(
               alignment: Alignment.topLeft,
-              child: globalFont.paragraphBlock('Implementation in Flutter',
+              child: globalFont.paragraphBlock('Implementation in Postgres',
                   Colors.black, size * 4, TextAlign.start),
             ),
             Container(
