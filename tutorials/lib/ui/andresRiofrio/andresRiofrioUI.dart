@@ -130,9 +130,9 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
             ),
             Padding(padding: EdgeInsets.only(top: 20)),
             globalFont.strDeveloperName(
-                'Andrés', false, Colors.white, size() * 8, TextAlign.center),
-            globalFont.strDeveloperName('Riofrío-Valdivieso', false,
-                Colors.white, size() * 6, TextAlign.center),
+                'Andrés', false, Colors.white, size() * 10, TextAlign.center),
+            globalFont.strDeveloperName('Riofrío Valdivieso', false,
+                Colors.white, size() * 8, TextAlign.center),
           ],
         ),
       );
@@ -197,9 +197,9 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
             Column(
               children: [
                 globalFont.strDeveloperName('Andrés', false, Colors.white,
-                    size() * 8, TextAlign.center),
+                    size() * 12, TextAlign.center),
                 globalFont.strDeveloperName(' Riofrío-Valdivieso', false,
-                    Colors.white, size() * 6, TextAlign.center),
+                    Colors.white, size() * 10, TextAlign.center),
               ],
             ),
           ],

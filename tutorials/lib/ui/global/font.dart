@@ -57,7 +57,7 @@ Widget strDeveloperName(String str, bool colorDynamic, Color color,
         return Text(
           str,
           textAlign: textAlign,
-          style: googleFont.GoogleFonts.clickerScript(
+          style: googleFont.GoogleFonts.tangerine(
             textStyle: TextStyle(
               color: colorDynamic
                   ? globalClr.colorPrimaryTextIcon(snapshot.data)
