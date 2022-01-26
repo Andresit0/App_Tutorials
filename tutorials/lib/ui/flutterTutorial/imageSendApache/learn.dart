@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:temp_btn_color_dialog_font/ui/global/encrypt.dart';
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
 import '/ui/global/func.dart' as globalFunc;
@@ -103,7 +102,7 @@ Widget learn(double size, BuildContext context) {
             Container(
               alignment: Alignment.topLeft,
               child: globalFont.paragraphBlock(
-                  '"writeClassImg.php" file takes the base64 string and transform to image. This works with flutter, you could have some problems if send the information only with a URL',
+                  '"imgWrite.php" file takes the base64 string and transform to image. This works with flutter, you could have some problems if send the information only with a URL',
                   Colors.black,
                   size * 4,
                   TextAlign.start),

@@ -40,7 +40,7 @@ class ImageToApachePageState extends State<ImageToApache> {
               title: Container(
                 width: double.infinity,
                 child: globalFont.strDeveloperBody(
-                    'ImageToApache Decrypt',
+                    'Image To Apache',
                     false,
                     globalClr.colorPrimaryTextIcon(colorPrimary),
                     size() * 8,
