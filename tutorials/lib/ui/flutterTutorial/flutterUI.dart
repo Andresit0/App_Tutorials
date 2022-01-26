@@ -21,6 +21,7 @@ import 'publishApp/publishApp.dart' as publishApp;
 import 'latex/latex.dart' as latex;
 import 'streamcontroller/streamcontroller.dart' as streamController;
 import 'rive/rive.dart' as rive;
+import 'imageSendApache/imageToApache.dart' as imgToApach;
 
 class FlutterUI extends StatefulWidget {
   FlutterUI({Key? key}) : super(key: key);
@@ -246,6 +247,29 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                                 builder: (context) => Container(
                                       child: form.Form(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: widthButton,
+                        height: heightButton,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
+                                'Image to Apache',
+                                Colors.black,
+                                letterSize,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child: imgToApach.ImageToApache(),
                                     )),
                           );
                         }),
