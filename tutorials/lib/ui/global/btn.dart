@@ -430,7 +430,6 @@ Widget btnTextUImgD(
 
 Widget btnImg(
     Color btnBackground,
-    EdgeInsets paddingBetweenIconText,
     Color clickColor,
     double imgSize,
     double borderRadius,

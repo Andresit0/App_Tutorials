@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp_btn_color_dialog_font/ui/global/expandableButton.dart';
 import 'header/btnHeader.dart' as btnEdit;
 import 'package:flutter/foundation.dart' as isWeb;
 import '/ui/global/clr.dart' as globalClr;
@@ -79,6 +80,31 @@ class ButtonPageState extends State<Button> {
           : AppBar(
               toolbarHeight: 0,
             ),
+      floatingActionButton: ExpandableButton(
+        distance: 112.0,
+        children: [
+          ActionButton(
+            onPressed: () {},
+            icon: const Icon(Icons.format_size),
+          ),
+          ActionButton(
+            onPressed: () {},
+            icon: const Icon(Icons.insert_photo),
+          ),
+          ActionButton(
+            onPressed: () {},
+            icon: const Icon(Icons.videocam),
+          ),
+          ActionButton(
+            onPressed: () {},
+            icon: const Icon(Icons.camera_enhance),
+          ),
+          ActionButton(
+            onPressed: () {},
+            icon: const Icon(Icons.camera),
+          ),
+        ],
+      ),
       body: Container(
           child: Column(
         children: [

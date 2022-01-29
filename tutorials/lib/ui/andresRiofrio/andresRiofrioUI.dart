@@ -251,7 +251,6 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                                   height: size() * 25,
                                   child: globalBtn.btnImg(
                                       Colors.transparent,
-                                      EdgeInsets.only(top: 0),
                                       Colors.black,
                                       size() * 18,
                                       360,
@@ -273,7 +272,6 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                                   height: size() * 25,
                                   child: globalBtn.btnImg(
                                       Colors.transparent,
-                                      EdgeInsets.only(top: 0),
                                       Colors.black,
                                       size() * 18,
                                       360,
@@ -295,7 +293,6 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                                   height: size() * 25,
                                   child: globalBtn.btnImg(
                                       Colors.transparent,
-                                      EdgeInsets.only(top: 0),
                                       Colors.black,
                                       size() * 18,
                                       360,
@@ -317,7 +314,6 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                                   height: size() * 25,
                                   child: globalBtn.btnImg(
                                       Colors.transparent,
-                                      EdgeInsets.only(top: 0),
                                       Colors.black,
                                       size() * 18,
                                       360,
