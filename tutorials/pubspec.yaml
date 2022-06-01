@@ -32,7 +32,7 @@ dependencies:
   flutter_tex: ^4.0.1
   flutter_countdown_timer: ^4.1.0
   rive: 0.7.28
-  syncfusion_flutter_pdfviewer: ^19.3.59-beta
+  syncfusion_flutter_pdfviewer: ^20.1.58-beta
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

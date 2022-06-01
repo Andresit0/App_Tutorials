@@ -10,6 +10,7 @@ import 'code.dart' as code;
 final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
 
 Widget learn(double size, BuildContext context) {
+  PdfViewerController _pdfViewerController = PdfViewerController();
   final List<Widget> pages = <Widget>[
     new ConstrainedBox(
       constraints: const BoxConstraints.expand(),
@@ -49,24 +50,67 @@ Widget learn(double size, BuildContext context) {
             ),
             Column(
               children: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.bookmark,
-                    color: Colors.black,
-                    semanticLabel: 'Bookmark',
-                  ),
-                  onPressed: () {
-                    _pdfViewerKey.currentState?.openBookmarkView();
-                  },
-                ),
                 Container(
                   width: 1000,
                   height: 500,
                   child: SfPdfViewer.asset(
                     'lib/ui/chialispTutorial/basicInformation/chialisp.pdf',
+                    controller: _pdfViewerController,
                     key: _pdfViewerKey,
                   ),
-                )
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: () {
+                        _pdfViewerController.nextPage();
+                      },
+                      child: Icon(
+                        Icons.keyboard_arrow_down,
+                        color: Colors.white,
+                      ),
+                    ),
+                    FloatingActionButton(
+                      onPressed: () {
+                        _pdfViewerController.previousPage();
+                      },
+                      child: Icon(
+                        Icons.keyboard_arrow_up,
+                        color: Colors.white,
+                      ),
+                    ),
+                    FloatingActionButton(
+                      onPressed: () {
+                        _pdfViewerController.zoomLevel++;
+                      },
+                      child: Icon(
+                        Icons.zoom_in,
+                        color: Colors.white,
+                      ),
+                    ),
+                    FloatingActionButton(
+                      onPressed: () {
+                        _pdfViewerController.zoomLevel--;
+                      },
+                      child: Icon(
+                        Icons.zoom_out,
+                        color: Colors.white,
+                      ),
+                    ),
+                    FloatingActionButton(
+                      child: const Icon(
+                        Icons.bookmark,
+                        color: Colors.white,
+                        semanticLabel: 'Bookmark',
+                      ),
+                      onPressed: () {
+                        _pdfViewerKey.currentState?.openBookmarkView();
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
             Container(

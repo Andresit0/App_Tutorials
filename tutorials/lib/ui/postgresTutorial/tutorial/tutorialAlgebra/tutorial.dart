@@ -35,6 +35,13 @@ class TutorialPDFPageState extends State<TutorialPDF> {
     }
 
     final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
+    PdfViewerController _pdfViewerController = PdfViewerController();
+
+    @override
+    void initState() {
+      _pdfViewerController = PdfViewerController();
+      super.initState();
+    }
 
     return Scaffold(
       appBar: !isWeb.kIsWeb
@@ -54,17 +61,60 @@ class TutorialPDFPageState extends State<TutorialPDF> {
             ),
       body: SfPdfViewer.asset(
         'lib/ui/postgresTutorial/tutorial/tutorialAlgebra/dbRelationalAlgebra.pdf',
+        controller: _pdfViewerController,
         key: _pdfViewerKey,
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(
-          Icons.bookmark,
-          color: Colors.white,
-          semanticLabel: 'Bookmark',
-        ),
-        onPressed: () {
-          _pdfViewerKey.currentState?.openBookmarkView();
-        },
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              _pdfViewerController.nextPage();
+            },
+            child: Icon(
+              Icons.keyboard_arrow_down,
+              color: Colors.white,
+            ),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              _pdfViewerController.previousPage();
+            },
+            child: Icon(
+              Icons.keyboard_arrow_up,
+              color: Colors.white,
+            ),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              _pdfViewerController.zoomLevel++;
+            },
+            child: Icon(
+              Icons.zoom_in,
+              color: Colors.white,
+            ),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              _pdfViewerController.zoomLevel--;
+            },
+            child: Icon(
+              Icons.zoom_out,
+              color: Colors.white,
+            ),
+          ),
+          FloatingActionButton(
+            child: const Icon(
+              Icons.bookmark,
+              color: Colors.white,
+              semanticLabel: 'Bookmark',
+            ),
+            onPressed: () {
+              _pdfViewerKey.currentState?.openBookmarkView();
+            },
+          ),
+        ],
       ),
     );
   }

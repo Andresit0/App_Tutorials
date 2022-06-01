@@ -7,7 +7,7 @@ import Foundation
 
 import flutter_tts
 import path_provider_macos
-import syncfusion_flutter_pdfviewer_macos
+import syncfusion_pdfviewer_macos
 import url_launcher_macos
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
