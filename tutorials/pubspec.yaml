@@ -57,6 +57,9 @@ flutter:
   assets:
     - lib/ui/img/curriculum/
     - lib/ui/img/appPublished/
+    - lib/ui/img/icon/
+    - lib/ui/img/appDeveloping/proFactec/
+    - lib/ui/img/appDeveloping/cocktail/
     - lib/ui/img/tutorial/chialisp/
     - lib/ui/img/tutorial/flutter/
     - lib/ui/img/tutorial/postgres/
