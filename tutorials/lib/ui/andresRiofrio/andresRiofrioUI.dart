@@ -9,7 +9,7 @@ import '../global/pageView/dotIndicator.dart';
 import '/ui/flutterTutorial/flutterUI.dart';
 import '../global/func.dart' as globalFunc;
 import '/ui/andresRiofrio/iconAppPublished.dart' as globalIcon;
-import '/ui/img/icon/icon_downloaded.dart';
+import '../img/icon/icon_downloaded.dart';
 import '/ui/global/dialog.dart' as globalDlg;
 import '/ui/global/btn.dart' as globalBtn;
 import '/ui/global/font.dart' as globalFont;
@@ -163,9 +163,8 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                               "https://stackoverflow.com/users/11075752/andres-riofrio");
                         }),
                         globalBtn.btnIconCircle(size() * 16, size() * 7, false,
-                            Colors.black, IconDownloaded.facebook, context, () {
-                          globalFunc.openAWeb(
-                              "https://www.facebook.com/profile.php?id=100075269015936");
+                            Colors.black, IconDownloaded.whatsapp, context, () {
+                          globalFunc.openAWeb("https://wa.me/593993715261");
                         }),
                       ],
                     ),

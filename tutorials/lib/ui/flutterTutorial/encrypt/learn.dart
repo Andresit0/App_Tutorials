@@ -4,7 +4,7 @@ import 'package:temp_btn_color_dialog_font/ui/global/encrypt.dart';
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
 import '/ui/global/func.dart' as globalFunc;
-import '/ui/img/icon/icon_downloaded.dart' as iconDownloaded;
+import '../../img/icon/icon_downloaded.dart' as iconDownloaded;
 import 'code.dart' as code;
 
 Widget learn(double size, BuildContext context) {

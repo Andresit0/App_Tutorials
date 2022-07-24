@@ -3,7 +3,7 @@ import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
 import '/ui/global/func.dart' as globalFunc;
 import '/ui/global/var.dart' as globalVar;
-import '/ui/img/icon/icon_downloaded.dart' as iconDownloaded;
+import '../../../img/icon/icon_downloaded.dart' as iconDownloaded;
 
 Widget attributes(double size) {
   return Container(
