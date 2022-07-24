@@ -227,9 +227,8 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                               "https://stackoverflow.com/users/11075752/andres-riofrio");
                         }),
                         globalBtn.btnIconCircle(size() * 16, size() * 7, false,
-                            Colors.black, IconDownloaded.facebook, context, () {
-                          globalFunc.openAWeb(
-                              "https://www.facebook.com/profile.php?id=100075269015936");
+                            Colors.black, IconDownloaded.whatsapp, context, () {
+                          globalFunc.openAWeb("https://wa.me/593993715261");
                         }),
                       ],
                     ),
