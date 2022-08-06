@@ -432,6 +432,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                         Padding(padding: EdgeInsets.only(top: 10)),
                         Row(
                           children: [
+                            /*
                             Container(
                               width: size() * 29,
                               height: size() * 29,
@@ -467,7 +468,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                                                 Colors.transparent,
                                                 globalVar.imgWeb, () {
                                               globalFunc.openAWeb(
-                                                  "http://97b4-190-110-60-140.ngrok.io/cocktail_game/#/");
+                                                  "https://4427-190-110-60-140.ngrok.io/cocktail_game/#/");
                                             }),
                                             Padding(
                                                 padding: EdgeInsets.only(
@@ -489,7 +490,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                                                 Colors.transparent,
                                                 globalVar.imgPlayStore, () {
                                               globalFunc.openAWeb(
-                                                  "https://97b4-190-110-60-140.ngrok.io/cocktail_file/cocktail_apk.zip");
+                                                  "https://4427-190-110-60-140.ngrok.io/cocktail_file/cocktail_apk.zip");
                                             }),
                                             Padding(
                                                 padding: EdgeInsets.only(
@@ -511,7 +512,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                                                 Colors.transparent,
                                                 globalVar.imgWindows, () {
                                               globalFunc.openAWeb(
-                                                  "https://97b4-190-110-60-140.ngrok.io/cocktail_file/cocktail_windows.zip");
+                                                  "https://4427-190-110-60-140.ngrok.io/cocktail_file/cocktail_windows.zip");
                                             }),
                                             Padding(
                                                 padding: EdgeInsets.only(
@@ -533,7 +534,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                                                 Colors.transparent,
                                                 globalVar.imgApple, () {
                                               globalFunc.openAWeb(
-                                                  "https://97b4-190-110-60-140.ngrok.io/cocktail_file/cocktail_mac.zip");
+                                                  "https://4427-190-110-60-140.ngrok.io/cocktail_file/cocktail_mac.zip");
                                             }),
                                             Padding(
                                                 padding: EdgeInsets.only(
@@ -548,6 +549,7 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                               }),
                             ),
                             Padding(padding: EdgeInsets.only(left: 10)),
+                            */
                             Container(
                               width: size() * 28,
                               height: size() * 28,
