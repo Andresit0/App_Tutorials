@@ -60,6 +60,7 @@ flutter:
     - lib/ui/img/icon/
     - lib/ui/img/appDeveloping/proFactec/
     - lib/ui/img/appDeveloping/cocktail/
+    - lib/ui/img/appDeveloping/laptopDoctor/
     - lib/ui/img/tutorial/chialisp/
     - lib/ui/img/tutorial/flutter/
     - lib/ui/img/tutorial/postgres/

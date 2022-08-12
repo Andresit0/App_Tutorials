@@ -67,6 +67,64 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
       child: new Image.asset(globalVar.imgProFactec9_cuenta),
     ),
   ];
+
+  final List<Widget> pagesCocktail = <Widget>[
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgCocktail),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgCocktail1_home),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgCocktail2_cocktail),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgCocktail3_startGame),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgCocktail4_game),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgCocktail5_endGame),
+    ),
+  ];
+
+  final List<Widget> pagesLaptopDoctor = <Widget>[
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgLaptopDoctor1_home),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgLaptopDoctor2_calendar),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgLaptopDoctor3_calendar),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgLaptopDoctor4_product),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgLaptopDoctor5_map),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgLaptopDoctor6_socialMedia),
+    ),
+    new ConstrainedBox(
+      constraints: const BoxConstraints.expand(),
+      child: new Image.asset(globalVar.imgLaptopDoctor7_chat),
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     double screenConstWidth = (MediaQuery.of(context).size.width -
@@ -255,40 +313,43 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
       const _kDuration = const Duration(milliseconds: 300);
       const _kCurve = Curves.ease;
 
-      return IconTheme(
-        data: new IconThemeData(color: Colors.black),
-        child: new Stack(
-          children: <Widget>[
-            new PageView.builder(
-              physics: new AlwaysScrollableScrollPhysics(),
-              controller: _controller,
-              itemBuilder: (BuildContext context, int index) {
-                return pages[index % pages.length];
-              },
-            ),
-            new Positioned(
-              bottom: 0.0,
-              left: 0.0,
-              right: 0.0,
-              child: new Container(
-                color: Colors.grey[800],
-                padding: const EdgeInsets.all(20.0),
-                child: new Center(
-                  child: new DotsIndicator(
-                    controller: _controller,
-                    itemCount: pages.length,
-                    onPageSelected: (int page) {
-                      _controller.animateToPage(
-                        page,
-                        duration: _kDuration,
-                        curve: _kCurve,
-                      );
-                    },
+      return Container(
+        color: Colors.black,
+        child: IconTheme(
+          data: new IconThemeData(color: Colors.black),
+          child: new Stack(
+            children: <Widget>[
+              new PageView.builder(
+                physics: new AlwaysScrollableScrollPhysics(),
+                controller: _controller,
+                itemBuilder: (BuildContext context, int index) {
+                  return pages[index % pages.length];
+                },
+              ),
+              new Positioned(
+                bottom: 0.0,
+                left: 0.0,
+                right: 0.0,
+                child: new Container(
+                  color: Colors.grey[800],
+                  padding: const EdgeInsets.all(20.0),
+                  child: new Center(
+                    child: new DotsIndicator(
+                      controller: _controller,
+                      itemCount: pages.length,
+                      onPageSelected: (int page) {
+                        _controller.animateToPage(
+                          page,
+                          duration: _kDuration,
+                          curve: _kCurve,
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
     }
@@ -432,10 +493,9 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                         Padding(padding: EdgeInsets.only(top: 10)),
                         Row(
                           children: [
-                            /*
                             Container(
-                              width: size() * 29,
-                              height: size() * 29,
+                              width: size() * 28,
+                              height: size() * 28,
                               child: globalBtn.btnImg(
                                   Colors.transparent,
                                   Colors.transparent,
@@ -443,113 +503,48 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                                   360,
                                   0,
                                   Colors.transparent,
-                                  globalVar.imgCocktail, () async {
+                                  globalVar.imgLaptopDoctor, () {
                                 dialogHeaderBodyFooter(
                                     context,
                                     true,
                                     primaryColor,
-                                    Text('COCKTAIL GAME',
+                                    Text('LAPTOP DOCTOR',
                                         style: TextStyle(
                                           color: Colors.white,
                                         )),
                                     Colors.white,
-                                    pageView(<Widget>[
-                                      ConstrainedBox(
-                                        constraints:
-                                            const BoxConstraints.expand(),
-                                        child: Column(
-                                          children: [
-                                            globalBtn.btnImg(
-                                                Colors.transparent,
-                                                Colors.transparent,
-                                                size() * 50,
-                                                360,
-                                                0,
-                                                Colors.transparent,
-                                                globalVar.imgWeb, () {
-                                              globalFunc.openAWeb(
-                                                  "https://4427-190-110-60-140.ngrok.io/cocktail_game/#/");
-                                            }),
-                                            Padding(
-                                                padding: EdgeInsets.only(
-                                                    top: size() * 2))
-                                          ],
-                                        ),
-                                      ),
-                                      ConstrainedBox(
-                                        constraints:
-                                            const BoxConstraints.expand(),
-                                        child: Column(
-                                          children: [
-                                            globalBtn.btnImg(
-                                                Colors.transparent,
-                                                Colors.transparent,
-                                                size() * 48,
-                                                360,
-                                                0,
-                                                Colors.transparent,
-                                                globalVar.imgPlayStore, () {
-                                              globalFunc.openAWeb(
-                                                  "https://4427-190-110-60-140.ngrok.io/cocktail_file/cocktail_apk.zip");
-                                            }),
-                                            Padding(
-                                                padding: EdgeInsets.only(
-                                                    top: size() * 2))
-                                          ],
-                                        ),
-                                      ),
-                                      ConstrainedBox(
-                                        constraints:
-                                            const BoxConstraints.expand(),
-                                        child: Column(
-                                          children: [
-                                            globalBtn.btnImg(
-                                                Colors.transparent,
-                                                Colors.transparent,
-                                                size() * 48,
-                                                360,
-                                                0,
-                                                Colors.transparent,
-                                                globalVar.imgWindows, () {
-                                              globalFunc.openAWeb(
-                                                  "https://4427-190-110-60-140.ngrok.io/cocktail_file/cocktail_windows.zip");
-                                            }),
-                                            Padding(
-                                                padding: EdgeInsets.only(
-                                                    top: size() * 2))
-                                          ],
-                                        ),
-                                      ),
-                                      ConstrainedBox(
-                                        constraints:
-                                            const BoxConstraints.expand(),
-                                        child: Column(
-                                          children: [
-                                            globalBtn.btnImg(
-                                                Colors.transparent,
-                                                Colors.transparent,
-                                                size() * 48,
-                                                360,
-                                                0,
-                                                Colors.transparent,
-                                                globalVar.imgApple, () {
-                                              globalFunc.openAWeb(
-                                                  "https://4427-190-110-60-140.ngrok.io/cocktail_file/cocktail_mac.zip");
-                                            }),
-                                            Padding(
-                                                padding: EdgeInsets.only(
-                                                    top: size() * 2))
-                                          ],
-                                        ),
-                                      ),
-                                    ]),
+                                    pageView(pagesLaptopDoctor),
                                     [],
-                                    size() * 60,
-                                    size() * 70);
+                                    size() * 200,
+                                    size() * 228);
                               }),
                             ),
-                            Padding(padding: EdgeInsets.only(left: 10)),
-                            */
+                            Container(
+                              width: size() * 28,
+                              height: size() * 28,
+                              child: globalBtn.btnImg(
+                                  Colors.transparent,
+                                  Colors.transparent,
+                                  size() * 90,
+                                  360,
+                                  0,
+                                  Colors.transparent,
+                                  globalVar.imgCocktail, () {
+                                dialogHeaderBodyFooter(
+                                    context,
+                                    true,
+                                    primaryColor,
+                                    Text('COCKTAIL',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        )),
+                                    Colors.white,
+                                    pageView(pagesCocktail),
+                                    [],
+                                    size() * 200,
+                                    size() * 228);
+                              }),
+                            ),
                             Container(
                               width: size() * 28,
                               height: size() * 28,

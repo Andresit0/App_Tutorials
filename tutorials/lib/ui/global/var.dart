@@ -37,3 +37,25 @@ String imgProFactec7_productos =
 String imgProFactec8_sistemaVentas =
     'lib/ui/img/appDeveloping/proFactec/8_sistemaVentas.png';
 String imgProFactec9_cuenta = 'lib/ui/img/appDeveloping/proFactec/9_cuenta.png';
+String imgCocktail1_home = 'lib/ui/img/appDeveloping/cocktail/1_home.png';
+String imgCocktail2_cocktail =
+    'lib/ui/img/appDeveloping/cocktail/2_cocktail.png';
+String imgCocktail3_startGame =
+    'lib/ui/img/appDeveloping/cocktail/3_startGame.png';
+String imgCocktail4_game = 'lib/ui/img/appDeveloping/cocktail/4_game.png';
+String imgCocktail5_endGame = 'lib/ui/img/appDeveloping/cocktail/5_endGame.png';
+String imgLaptopDoctor =
+    'lib/ui/img/appDeveloping/laptopDoctor/laptopDoctor.png';
+String imgLaptopDoctor1_home =
+    'lib/ui/img/appDeveloping/laptopDoctor/1_home.png';
+String imgLaptopDoctor2_calendar =
+    'lib/ui/img/appDeveloping/laptopDoctor/2_calendar.png';
+String imgLaptopDoctor3_calendar =
+    'lib/ui/img/appDeveloping/laptopDoctor/3_calendar.png';
+String imgLaptopDoctor4_product =
+    'lib/ui/img/appDeveloping/laptopDoctor/4_product.png';
+String imgLaptopDoctor5_map = 'lib/ui/img/appDeveloping/laptopDoctor/5_map.png';
+String imgLaptopDoctor6_socialMedia =
+    'lib/ui/img/appDeveloping/laptopDoctor/6_socialMedia.png';
+String imgLaptopDoctor7_chat =
+    'lib/ui/img/appDeveloping/laptopDoctor/7_chat.png';
