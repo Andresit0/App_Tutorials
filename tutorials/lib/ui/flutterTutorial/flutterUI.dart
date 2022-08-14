@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' as isWeb;
+import 'package:temp_btn_color_dialog_font/ui/flutterTutorial/provider/writeRead.dart';
 import '/ui/global/clr.dart' as globalClr;
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
@@ -399,6 +400,29 @@ class FlutterUIPageState extends State<FlutterUI> {
                             MaterialPageRoute(
                                 builder: (context) => Container(
                                       child: pdf.Pdf(),
+                                    )),
+                          );
+                        }),
+                      ),
+                      Container(
+                        width: widthButton,
+                        height: heightButton,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
+                                'Provider',
+                                Colors.black,
+                                letterSize,
+                                TextAlign.center), () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Container(
+                                      child: Provider(),
                                     )),
                           );
                         }),
