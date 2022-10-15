@@ -4,6 +4,7 @@ import 'package:temp_btn_color_dialog_font/ui/flutterTutorial/provider/writeRead
 import '/ui/global/clr.dart' as globalClr;
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
+import '/ui/global/func.dart' as globalFunc;
 import 'button/button.dart' as button;
 import 'dialog/dialog.dart' as dialog;
 import 'font/font.dart' as font;
@@ -112,6 +113,21 @@ class FlutterUIPageState extends State<FlutterUI> {
                             15,
                             1,
                             colorPrimary,
+                            globalFont.titleIconTutorial('BLoC', Colors.black,
+                                letterSize, TextAlign.center), () {
+                          globalFunc.openAWeb(
+                              "https://github.com/Andresit0/BLoC_Flutter");
+                        }),
+                      ),
+                      Container(
+                        width: widthButton,
+                        height: heightButton,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
                             globalFont.titleIconTutorial(
                                 'Buttons',
                                 Colors.black,
@@ -167,6 +183,21 @@ class FlutterUIPageState extends State<FlutterUI> {
                                   Container(child: countdown.Countdown()),
                             ),
                           );
+                        }),
+                      ),
+                      Container(
+                        width: widthButton,
+                        height: heightButton,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial('Cubit', Colors.black,
+                                letterSize, TextAlign.center), () {
+                          globalFunc.openAWeb(
+                              "https://github.com/Andresit0/Cubit_Flutter");
                         }),
                       ),
                       Container(
