@@ -555,6 +555,24 @@ class FlutterUIPageState extends State<FlutterUI> {
                             1,
                             colorPrimary,
                             globalFont.titleIconTutorial(
+                                'Testing',
+                                Colors.black,
+                                letterSize,
+                                TextAlign.center), () {
+                          globalFunc.openAWeb(
+                              "https://github.com/Andresit0/Test_Flutter");
+                        }),
+                      ),
+                      Container(
+                        width: widthButton,
+                        height: heightButton,
+                        child: globalBtn.btnText(
+                            Colors.transparent,
+                            colorPrimary,
+                            15,
+                            1,
+                            colorPrimary,
+                            globalFont.titleIconTutorial(
                                 'Write \n Read',
                                 Colors.black,
                                 letterSize,
