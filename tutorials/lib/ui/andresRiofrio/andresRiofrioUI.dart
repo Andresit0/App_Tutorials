@@ -358,6 +358,37 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
       return Container(child: presentationColumn());
     }
 
+    Widget webApp(String url) {
+      return Container(
+        width: size() * 28,
+        height: size() * 28,
+        alignment: Alignment.bottomRight,
+        padding: const EdgeInsets.only(bottom: 10, right: 15),
+        child: InkWell(
+          focusColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
+          overlayColor:
+              MaterialStateProperty.resolveWith((states) => Colors.transparent),
+          onTap: () {
+            globalFunc.openAWeb(url);
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(360),
+            child: Container(
+                alignment: Alignment.center,
+                width: 32,
+                height: 32,
+                color: Colors.white,
+                child: Text(
+                  'Web',
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                )),
+          ),
+        ),
+      );
+    }
+
     Widget information() {
       return Expanded(
         flex: 1,
@@ -482,100 +513,113 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                         Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
                           width: double.infinity,
-                          child: globalFont.strDeveloperBody(
-                              'Current Developing Projects',
-                              false,
-                              Colors.black,
-                              size() * 5,
-                              TextAlign.left),
+                          child: globalFont.strDeveloperBody('Web Apps', false,
+                              Colors.black, size() * 5, TextAlign.left),
                         ),
                         Padding(padding: EdgeInsets.only(top: 10)),
                         Row(
                           children: [
-                            Container(
-                              width: size() * 28,
-                              height: size() * 28,
-                              child: globalBtn.btnImg(
-                                  Colors.transparent,
-                                  Colors.transparent,
-                                  size() * 90,
-                                  360,
-                                  0,
-                                  Colors.transparent,
-                                  globalVar.imgLaptopDoctor, () {
-                                dialogHeaderBodyFooter(
-                                    context,
-                                    true,
-                                    primaryColor,
-                                    Text('LAPTOP DOCTOR',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                        )),
-                                    Colors.white,
-                                    pageView(pagesLaptopDoctor),
-                                    [],
-                                    size() * 200,
-                                    size() * 228);
-                              }),
+                            Stack(
+                              children: [
+                                Container(
+                                  width: size() * 28,
+                                  height: size() * 28,
+                                  child: globalBtn.btnImg(
+                                      Colors.transparent,
+                                      Colors.transparent,
+                                      size() * 90,
+                                      360,
+                                      0,
+                                      Colors.transparent,
+                                      globalVar.imgLaptopDoctor, () {
+                                    dialogHeaderBodyFooter(
+                                        context,
+                                        true,
+                                        primaryColor,
+                                        Text('LAPTOP DOCTOR',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            )),
+                                        Colors.white,
+                                        pageView(pagesLaptopDoctor),
+                                        [],
+                                        size() * 200,
+                                        size() * 228);
+                                  }),
+                                ),
+                                webApp(
+                                    'http://tudesarrollador.com/laptopdoctor/#/'),
+                              ],
                             ),
-                            Container(
-                              width: size() * 28,
-                              height: size() * 28,
-                              child: globalBtn.btnImg(
-                                  Colors.transparent,
-                                  Colors.transparent,
-                                  size() * 90,
-                                  360,
-                                  0,
-                                  Colors.transparent,
-                                  globalVar.imgCocktail, () {
-                                dialogHeaderBodyFooter(
-                                    context,
-                                    true,
-                                    primaryColor,
-                                    Text('COCKTAIL',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                        )),
-                                    Colors.white,
-                                    pageView(pagesCocktail),
-                                    [],
-                                    size() * 200,
-                                    size() * 228);
-                              }),
+                            Stack(
+                              children: [
+                                Container(
+                                  width: size() * 28,
+                                  height: size() * 28,
+                                  child: globalBtn.btnImg(
+                                      Colors.transparent,
+                                      Colors.transparent,
+                                      size() * 90,
+                                      360,
+                                      0,
+                                      Colors.transparent,
+                                      globalVar.imgCocktail, () {
+                                    dialogHeaderBodyFooter(
+                                        context,
+                                        true,
+                                        primaryColor,
+                                        Text('COCKTAIL',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            )),
+                                        Colors.white,
+                                        pageView(pagesCocktail),
+                                        [],
+                                        size() * 200,
+                                        size() * 228);
+                                  }),
+                                ),
+                                webApp(
+                                    'http://tudesarrollador.com/cocktail/#/'),
+                              ],
                             ),
-                            Container(
-                              width: size() * 28,
-                              height: size() * 28,
-                              child: globalBtn.btnImg(
-                                  Colors.transparent,
-                                  Colors.transparent,
-                                  size() * 90,
-                                  360,
-                                  0,
-                                  Colors.transparent,
-                                  globalVar.imgProFactec, () {
-                                dialogHeaderBodyFooter(
-                                    context,
-                                    true,
-                                    primaryColor,
-                                    Text('PRO FACTEC',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                        )),
-                                    Colors.white,
-                                    pageView(pagesProFactec),
-                                    [],
-                                    size() * 200,
-                                    size() * 228);
-                              }),
+                            Stack(
+                              children: [
+                                Container(
+                                  width: size() * 28,
+                                  height: size() * 28,
+                                  child: globalBtn.btnImg(
+                                      Colors.transparent,
+                                      Colors.transparent,
+                                      size() * 90,
+                                      360,
+                                      0,
+                                      Colors.transparent,
+                                      globalVar.imgProFactec, () {
+                                    dialogHeaderBodyFooter(
+                                        context,
+                                        true,
+                                        primaryColor,
+                                        Text('PRO FACTEC',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            )),
+                                        Colors.white,
+                                        pageView(pagesProFactec),
+                                        [],
+                                        size() * 200,
+                                        size() * 228);
+                                  }),
+                                ),
+                                webApp('http://tudesarrollador.com/factec/#/'),
+                              ],
                             ),
                           ],
                         ),
                         Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
                           width: double.infinity,
-                          child: globalFont.strDeveloperBody('Published Apps',
+                          child: globalFont.strDeveloperBody('Android Apps',
                               false, Colors.black, size() * 5, TextAlign.left),
                         ),
                         Padding(padding: EdgeInsets.only(top: 10)),
