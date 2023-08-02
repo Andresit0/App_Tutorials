@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:temp_btn_color_dialog_font/ui/global/encrypt.dart';
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
 import '/ui/global/func.dart' as globalFunc;
-import '../../img/icon/icon_downloaded.dart' as iconDownloaded;
 import 'code.dart' as code;
 
 Widget learn(double size, BuildContext context) {
-  final List<Widget> pages = <Widget>[
-    new ConstrainedBox(
-      constraints: const BoxConstraints.expand(),
-      child: new FlutterLogo(),
-    ),
-    new ConstrainedBox(
-      constraints: const BoxConstraints.expand(),
-      child: new FlutterLogo(style: FlutterLogoStyle.stacked),
-    ),
-    new ConstrainedBox(
-      constraints: const BoxConstraints.expand(),
-      child: new FlutterLogo(style: FlutterLogoStyle.horizontal),
-    ),
-  ];
+  // final List<Widget> pages = <Widget>[
+  //   new ConstrainedBox(
+  //     constraints: const BoxConstraints.expand(),
+  //     child: new FlutterLogo(),
+  //   ),
+  //   new ConstrainedBox(
+  //     constraints: const BoxConstraints.expand(),
+  //     child: new FlutterLogo(style: FlutterLogoStyle.stacked),
+  //   ),
+  //   new ConstrainedBox(
+  //     constraints: const BoxConstraints.expand(),
+  //     child: new FlutterLogo(style: FlutterLogoStyle.horizontal),
+  //   ),
+  // ];
   return Expanded(
     child: SingleChildScrollView(
         padding: EdgeInsets.all(10),

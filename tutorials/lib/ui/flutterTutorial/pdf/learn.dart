@@ -11,20 +11,20 @@ final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
 
 Widget learn(double size, BuildContext context) {
   PdfViewerController _pdfViewerController = PdfViewerController();
-  final List<Widget> pages = <Widget>[
-    new ConstrainedBox(
-      constraints: const BoxConstraints.expand(),
-      child: new FlutterLogo(),
-    ),
-    new ConstrainedBox(
-      constraints: const BoxConstraints.expand(),
-      child: new FlutterLogo(style: FlutterLogoStyle.stacked),
-    ),
-    new ConstrainedBox(
-      constraints: const BoxConstraints.expand(),
-      child: new FlutterLogo(style: FlutterLogoStyle.horizontal),
-    ),
-  ];
+  // final List<Widget> pages = <Widget>[
+  //   new ConstrainedBox(
+  //     constraints: const BoxConstraints.expand(),
+  //     child: new FlutterLogo(),
+  //   ),
+  //   new ConstrainedBox(
+  //     constraints: const BoxConstraints.expand(),
+  //     child: new FlutterLogo(style: FlutterLogoStyle.stacked),
+  //   ),
+  //   new ConstrainedBox(
+  //     constraints: const BoxConstraints.expand(),
+  //     child: new FlutterLogo(style: FlutterLogoStyle.horizontal),
+  //   ),
+  // ];
   return Expanded(
     child: SingleChildScrollView(
         padding: EdgeInsets.all(10),

@@ -10,7 +10,6 @@ import '/ui/flutterTutorial/flutterUI.dart';
 import '../global/func.dart' as globalFunc;
 import '/ui/andresRiofrio/iconAppPublished.dart' as globalIcon;
 import '../img/icon/icon_downloaded.dart';
-import '/ui/global/dialog.dart' as globalDlg;
 import '/ui/global/btn.dart' as globalBtn;
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/listBtnAppColor.dart' as globalListBtnClr;

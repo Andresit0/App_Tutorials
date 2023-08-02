@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' as isWeb;
 import '/ui/global/clr.dart' as globalClr;
 import '/ui/global/font.dart' as globalFont;
-import 'latex.dart' as latex;
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class TutorialPDF extends StatefulWidget {

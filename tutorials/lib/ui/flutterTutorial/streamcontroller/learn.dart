@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '/ui/global/reorderableWidget.dart';
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
 import '/ui/global/func.dart' as globalFunc;
@@ -38,17 +37,17 @@ String timerText(int hour, int min, int sec) {
 }
 
 Widget learn(double size, BuildContext context) {
-  late List<Widget> rows = [
-    reorderableWidget(Text('widget 1', style: TextStyle(fontSize: size * 5))),
-    reorderableWidget(Text('widget 2', style: TextStyle(fontSize: size * 5))),
-    reorderableWidget(Text('widget 3', style: TextStyle(fontSize: size * 5))),
-    reorderableWidget(Text('widget 4', style: TextStyle(fontSize: size * 5))),
-    reorderableWidget(Text('widget 5', style: TextStyle(fontSize: size * 5))),
-    reorderableWidget(Text('widget 6', style: TextStyle(fontSize: size * 5))),
-    reorderableWidget(Text('widget 7', style: TextStyle(fontSize: size * 5))),
-    reorderableWidget(Text('widget 8', style: TextStyle(fontSize: size * 5))),
-    reorderableWidget(Text('widget 9', style: TextStyle(fontSize: size * 5))),
-  ];
+  // late List<Widget> rows = [
+  //   reorderableWidget(Text('widget 1', style: TextStyle(fontSize: size * 5))),
+  //   reorderableWidget(Text('widget 2', style: TextStyle(fontSize: size * 5))),
+  //   reorderableWidget(Text('widget 3', style: TextStyle(fontSize: size * 5))),
+  //   reorderableWidget(Text('widget 4', style: TextStyle(fontSize: size * 5))),
+  //   reorderableWidget(Text('widget 5', style: TextStyle(fontSize: size * 5))),
+  //   reorderableWidget(Text('widget 6', style: TextStyle(fontSize: size * 5))),
+  //   reorderableWidget(Text('widget 7', style: TextStyle(fontSize: size * 5))),
+  //   reorderableWidget(Text('widget 8', style: TextStyle(fontSize: size * 5))),
+  //   reorderableWidget(Text('widget 9', style: TextStyle(fontSize: size * 5))),
+  // ];
   return Expanded(
     child: SingleChildScrollView(
         padding: EdgeInsets.all(10),

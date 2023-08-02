@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import '/ui/global/font.dart' as globalFont;
 import '/ui/global/btn.dart' as globalBtn;
 import '/ui/global/func.dart' as globalFunc;
-import '/ui/global/var.dart' as globalVar;
 import '/ui/img/icon/icon_downloaded.dart' as iconDownloaded;
 import 'code.dart' as code;
 
