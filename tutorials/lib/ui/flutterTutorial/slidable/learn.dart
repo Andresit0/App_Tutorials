@@ -12,8 +12,8 @@ import '/ui/global/func.dart' as globalFunc;
 import '/ui/img/icon/icon_downloaded.dart' as iconDownloaded;
 import 'code.dart' as code;
 
-Widget horizontalListExample(Color primaryColor, Color secundaryColor) {
-  late final SlidableController slidableController = SlidableController();
+Widget horizontalListExample(Color primaryColor, Color secundaryColor,
+    SlidableController slidableController) {
   List<Widget> listWidget = [
     widgetText('TITLE 1'),
     widgetText('TITLE 2'),
@@ -51,7 +51,8 @@ Widget horizontalListExample(Color primaryColor, Color secundaryColor) {
   });
 }
 
-Widget learn(double size, BuildContext context) {
+Widget learn(
+    double size, BuildContext context, SlidableController slidableController) {
   return Expanded(
     child: SingleChildScrollView(
         padding: EdgeInsets.all(10),
@@ -78,7 +79,8 @@ Widget learn(double size, BuildContext context) {
             Container(
               height: size * 80,
               width: double.infinity,
-              child: horizontalListExample(primaryColor, secundaryColor),
+              child: horizontalListExample(
+                  primaryColor, secundaryColor, slidableController),
             ),
             Container(
               alignment: Alignment.topLeft,

@@ -901,14 +901,14 @@ TeXViewWidget confLevel(Color titleColor) {
 
 TeXViewStyle _teXViewStyle(Color color) {
   return TeXViewStyle(
-    textAlign: TeXViewTextAlign.Center,
+    textAlign: TeXViewTextAlign.center,
     margin: TeXViewMargin.all(10),
     padding: TeXViewPadding.all(10),
     borderRadius: TeXViewBorderRadius.all(10),
     border: TeXViewBorder.all(
       TeXViewBorderDecoration(
           borderColor: color,
-          borderStyle: TeXViewBorderStyle.Solid,
+          borderStyle: TeXViewBorderStyle.solid,
           borderWidth: 2),
     ),
   );
@@ -1705,12 +1705,12 @@ TeXViewWidget _teXViewWidget(String title, String body, Color titleColor) {
       TeXViewDocument(title,
           style: TeXViewStyle(
               contentColor: titleColor,
-              textAlign: TeXViewTextAlign.Center,
+              textAlign: TeXViewTextAlign.center,
               fontStyle: TeXViewFontStyle(fontSize: 20))),
       TeXViewDocument(body,
           style: TeXViewStyle(
             margin: TeXViewMargin.only(top: 10),
-            textAlign: TeXViewTextAlign.Left,
+            textAlign: TeXViewTextAlign.left,
           ))
     ],
   );

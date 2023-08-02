@@ -14,14 +14,9 @@ Widget slidableLeftRight(
     height: height,
     width: width,
     child: Slidable(
-      controller: slidableController,
-      direction: axis,
-      actionPane: SlidableScrollActionPane(),
-      actionExtentRatio:
-          actionExtentRatio, //left & right widget size. Sum of widget (widgetLeft * actionExtentRatio < 1 & > 0) & (widgetRight * actionExtentRatio < 1 & > 0)
+      direction:
+          axis, //left & right widget size. Sum of widget (widgetLeft * actionExtentRatio < 1 & > 0) & (widgetRight * actionExtentRatio < 1 & > 0)
       child: widgetMain,
-      actions: widgetLeft,
-      secondaryActions: widgetRight,
     ),
   );
 }
@@ -38,13 +33,9 @@ Widget slidableLeft(
     height: height,
     width: width,
     child: Slidable(
-      controller: slidableController,
-      direction: axis,
-      actionPane: SlidableScrollActionPane(),
-      actionExtentRatio:
-          actionExtentRatio, //left & right widget size. Sum of widget (widgetLeft * actionExtentRatio < 1 & > 0) & (widgetRight * actionExtentRatio < 1 & > 0)
+      direction:
+          axis, //left & right widget size. Sum of widget (widgetLeft * actionExtentRatio < 1 & > 0) & (widgetRight * actionExtentRatio < 1 & > 0)
       child: widgetMain,
-      actions: widgetLeft,
     ),
   );
 }
@@ -61,13 +52,9 @@ Widget slidableRight(
     height: height,
     width: width,
     child: Slidable(
-      controller: slidableController,
-      direction: axis,
-      actionPane: SlidableScrollActionPane(),
-      actionExtentRatio:
-          actionExtentRatio, //left & right widget size. Sum of widget (widgetLeft * actionExtentRatio < 1 & > 0) & (widgetRight * actionExtentRatio < 1 & > 0)
+      direction:
+          axis, //left & right widget size. Sum of widget (widgetLeft * actionExtentRatio < 1 & > 0) & (widgetRight * actionExtentRatio < 1 & > 0)
       child: widgetMain,
-      actions: widgetLeft,
     ),
   );
 }

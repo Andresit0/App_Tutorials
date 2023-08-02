@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' as isWeb;
+import 'package:flutter_slidable/flutter_slidable.dart';
 import '/ui/global/clr.dart' as globalClr;
 import '/ui/global/font.dart' as globalFont;
 import 'learn.dart' as learn;
@@ -10,7 +11,16 @@ class Slidable extends StatefulWidget {
   SlidablePageState createState() => SlidablePageState();
 }
 
-class SlidablePageState extends State<Slidable> {
+class SlidablePageState extends State<Slidable>
+    with SingleTickerProviderStateMixin {
+  late final SlidableController slidableController;
+
+  @override
+  void initState() {
+    slidableController = SlidableController(this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     Color colorPrimary = Theme.of(context).primaryColor;
@@ -53,7 +63,7 @@ class SlidablePageState extends State<Slidable> {
       body: Container(
           child: Column(
         children: [
-          learn.learn(size(), context),
+          learn.learn(size(), context, slidableController),
         ],
       )),
     );

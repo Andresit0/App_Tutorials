@@ -30,8 +30,8 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  late final SlidableController slidableController = SlidableController();
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+  late final SlidableController slidableController = SlidableController(this);
   List<Widget> listWidget = [
     widgetText('TITLE 1'),
     widgetText('TITLE 2'),
