@@ -635,21 +635,21 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
                             ],
                           ),
                         ),
-                        Padding(padding: EdgeInsets.only(top: 10)),
-                        Container(
-                          width: double.infinity,
-                          child: globalFont.strDeveloperBody('Responsible Apps',
-                              false, Colors.black, size() * 5, TextAlign.left),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 10)),
-                        Container(
-                          child: Row(
-                            children: [
-                              globalIcon.hablaAndrea(size() * 1.1, context),
-                              Padding(padding: EdgeInsets.only(left: 10)),
-                            ],
-                          ),
-                        ),
+                        // Padding(padding: EdgeInsets.only(top: 10)),
+                        // Container(
+                        //   width: double.infinity,
+                        //   child: globalFont.strDeveloperBody('Responsible Apps',
+                        //       false, Colors.black, size() * 5, TextAlign.left),
+                        // ),
+                        // Padding(padding: EdgeInsets.only(top: 10)),
+                        // Container(
+                        //   child: Row(
+                        //     children: [
+                        //       globalIcon.hablaAndrea(size() * 1.1, context),
+                        //       Padding(padding: EdgeInsets.only(left: 10)),
+                        //     ],
+                        //   ),
+                        // ),
                         Padding(padding: EdgeInsets.only(top: 10)),
                         Container(
                           width: double.infinity,
