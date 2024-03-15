@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'clr.dart' as globalClr;
 
 Widget btnText(Color btnBackground, Color clickColor, double borderRadius,
     double borderWidth, Color borderColor, Widget text, Function onPressed) {
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -35,30 +33,35 @@ Widget btnIcon(
     Color borderColor,
     IconData btnIcon,
     Function onPressed) {
-  return TextButton(
-    style: TextButton.styleFrom(
-      backgroundColor: btnBackground,
-      primary: clickColor,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius),
-          side: BorderSide(color: Colors.transparent, width: borderWidth)),
-    ),
-    onPressed: () => onPressed(),
-    child: Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            child: Icon(
-              btnIcon,
-              color: iconColor,
-              size: iconSize,
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.end,
+    crossAxisAlignment: CrossAxisAlignment.end,
+    children: [
+      ClipRRect(
+        borderRadius: BorderRadius.circular(360),
+        child: Container(
+          constraints: BoxConstraints(minWidth: 50, minHeight: 50),
+          color: Colors.white,
+          child: TextButton(
+            onPressed: () => onPressed(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(left: 5),
+                  child: Icon(
+                    btnIcon,
+                    color: iconColor,
+                    size: iconSize,
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
-    ),
+        ),
+      )
+    ],
   );
 }
 
@@ -77,7 +80,6 @@ Widget btnIconLTextR(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -120,7 +122,6 @@ Widget btnIconUTextD(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -163,7 +164,6 @@ Widget btnTextLIconR(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -206,7 +206,6 @@ Widget btnTextUIconD(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -242,34 +241,30 @@ Widget btnIconCircle(
     IconData icon,
     BuildContext context,
     Function onPressed) {
-  return StreamBuilder(
-      initialData: globalClr.initialAppColor,
-      builder: (context, AsyncSnapshot snapshot) {
-        return Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                width: circleSize,
-                height: circleSize,
-                child: btnIcon(
-                    Colors.white,
-                    Theme.of(context).primaryColor,
-                    Colors.black,
-                    iconSize,
-                    360,
-                    circleSize,
-                    iconBoolBorderColor,
-                    iconBoolBorderColor
-                        ? Theme.of(context).primaryColor
-                        : iconBorderColor,
-                    icon,
-                    onPressed),
-              ),
-            ],
-          ),
-        );
-      });
+  return Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Container(
+          width: circleSize,
+          height: circleSize,
+          child: btnIcon(
+              Colors.white,
+              Theme.of(context).primaryColor,
+              Colors.black,
+              iconSize,
+              360,
+              circleSize,
+              iconBoolBorderColor,
+              iconBoolBorderColor
+                  ? Theme.of(context).primaryColor
+                  : iconBorderColor,
+              icon,
+              onPressed),
+        ),
+      ],
+    ),
+  );
 }
 
 Widget btnImgUTextD(
@@ -286,7 +281,6 @@ Widget btnImgUTextD(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -325,7 +319,6 @@ Widget btnImgLTextR(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -364,7 +357,6 @@ Widget btnTextLImgR(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -403,7 +395,6 @@ Widget btnTextUImgD(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -440,7 +431,6 @@ Widget btnImg(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),

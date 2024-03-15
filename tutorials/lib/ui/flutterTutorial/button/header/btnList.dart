@@ -5,7 +5,6 @@ Widget btnText(Color btnBackground, Color clickColor, double borderRadius,
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -36,7 +35,6 @@ Widget btnIcon(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -75,7 +73,6 @@ Widget btnIconLTextR(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -118,7 +115,6 @@ Widget btnIconUTextD(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -161,7 +157,6 @@ Widget btnTextLIconR(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),
@@ -204,7 +199,6 @@ Widget btnTextUIconD(
   return TextButton(
     style: TextButton.styleFrom(
       backgroundColor: btnBackground,
-      primary: clickColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           side: BorderSide(color: borderColor, width: borderWidth)),

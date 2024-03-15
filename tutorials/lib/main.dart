@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Andrés Riofrío Valdivieso Tutorials',
             theme: ThemeData(
+              useMaterial3: false,
               primarySwatch: snapshot.data,
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),

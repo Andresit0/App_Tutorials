@@ -376,14 +376,15 @@ class AndresRiofrioPageState extends State<AndresRiofrio> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(360),
             child: Container(
-                alignment: Alignment.center,
-                width: 32,
-                height: 32,
-                color: Colors.white,
-                child: Text(
-                  'Web',
-                  style: TextStyle(fontWeight: FontWeight.w500),
-                )),
+              alignment: Alignment.center,
+              width: 32,
+              height: 32,
+              color: Colors.white,
+              child: Icon(
+                Icons.public,
+                size: 32,
+              ),
+            ),
           ),
         ),
       );
